@@ -8,6 +8,7 @@ let i = 1;
 let j = 1;
 let k = 1; 
 
+
 while(i <50){
     if(fizz < buzz && fizz < fizzbazz){
         console.log("Fizz " + fizz);
