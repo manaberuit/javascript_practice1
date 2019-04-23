@@ -1,6 +1,5 @@
 const number1 = 3;
 const number2 = 5;
-const number3 = number1 * number2;
 const maxNum = 100;
 let fizz = number1;
 let buzz = number2;
