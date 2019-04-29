@@ -17,54 +17,12 @@
             <td><input type="text" id="buzz" size="22" placeholder="整数値を入力してください"></td>
         </tr>
     </table>
-    <button type="button" onclick="main();">実行</button>
+    <button type="button" id="btn">実行</button>
 
     <p>【出力】</p>
     <div id="fizzbuzz">
     </div>
 
-    <script>
-        function main(){
-            const number1 = Number(document.getElementById('fizz').value);
-            const number2 = Number(document.getElementById('buzz').value);
-            const maxNum = 100;
-            let fizz = number1;
-            let buzz = number2;
-            let result = "";
-            
-            //出力リセット
-            var dom_obj = document.getElementById("fizzbuzz");
-            dom_obj.textContent = null;
-            
-            if(Number.isInteger(number1) && Number.isInteger(number2)){
-                //整数の場合
-                while(fizz < maxNum || buzz < maxNum){
-                if(fizz < buzz){
-                    result += "Fizz " + fizz + "<br>"
-                    fizz += number1;
-                }else if(buzz < fizz){
-                    result += "Buzz " + buzz + "<br>"
-                    buzz += number2;
-                }else if(fizz === buzz){
-                    result += "FizzBuzz " + fizz +"<br>"
-                    fizz += number1;
-                    buzz += number2;
-                }
-            }
-            var div_element = document.createElement("div");
-            div_element.innerHTML = result;
-            var parent_object = document.getElementById("fizzbuzz");
-            parent_object.appendChild(div_element);
-
-        }else{
-            //どちらか整数ではない場合
-            result="整数値を入力してください";
-            var div_element = document.createElement("div");
-            div_element.innerHTML = result;
-            var parent_object = document.getElementById("fizzbuzz");
-            parent_object.appendChild(div_element);
-                }
-            }
-        </script>
+    <script type="text/javascript" src="kadai1.js"></script>
 </body>
 </html>
