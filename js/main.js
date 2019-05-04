@@ -26,16 +26,17 @@
 
     // ２倍にする計算コード
     for(let i = 1 ; fizz.value * i < 100 && buzz.value * i < 100 ; i++ ){
-
-      // if((fizz.value * i) === (buzz.value * i)){
-      if((fizz.value * i) === 33){
-        calculation.push("FizzBuzz " + fizz.value * i);
-        console.log("来たよ");
-        continue;
-      };
       // 配列に追加するコード
-      calculation.push("Fizz " + fizz.value * i);
-      calculation.push("Buzz " + buzz.value * i);
+      if((fizz.value * i) % buzz.value === 0 ){
+        calculation.push("FizzBuzz " + fizz.value * i);
+      } else{
+        calculation.push("Fizz " + fizz.value * i);
+      };
+      if((buzz.value * i) % fizz.value === 0 ){
+        calculation.push("FizzBuzz " + buzz.value * i);
+      } else{
+        calculation.push("Buzz " + buzz.value * i);
+      };
     }
 
     // 計算結果を持つ配列を要素に追加して表示
