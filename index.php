@@ -9,23 +9,22 @@
 <body>
     FizzBuzz問題
 
-    <form action="" method="get">
-    <p><label for="fizz">FizzNum: </label><input type="text" name="fizz" id="fizz"></p>
-    <p><label for="buzz">BizzNum: </label><input type="text" name="buzz" id="buzz"></p>
-    <input type="submit" value="実行">
+    <form action="" method="post">
+        <p><label for="fizz">FizzNum: </label><input type="text" name="fizz" id="fizz"></p>
+        <p><label for="buzz">BizzNum: </label><input type="text" name="buzz" id="buzz"></p>
+        <input type="submit" value="実行">
     </form>
 
     <p>【出力】</p>
 
     <?php
 
-        $num1 = $_GET["fizz"];
-        $num2 = $_GET["buzz"];
-        
-        echo "<p>" . $num1 . "</p>";
-        echo "<p>" . $num2 . "</p>";
+    if(!isset($_POST['submit'])){
+    
+        $num1 = $_POST["fizz"];
+        $num2 = $_POST["buzz"];
 
-        // 入力されているか確認
+        // 空欄で送信されているかの確認
 
         if($num1 === '' && $num2 === '' ){
             echo "整数値を入力してください\n";
@@ -35,9 +34,18 @@
             echo "Buzzを入力してください\n";
         }
 
+        //数字が入力されているか確認
+
+        if(preg_match("/[^0-9]/", $num1) || preg_match("/[^0-9]/", $num2)){
+           echo "数値以外が入力されています。";
+        }
+
+        
+
         //FizzBuzz
 
-        for($i = 1; $i <= 100; $i++){
+        for($i = 1; $i <= 200; $i++){
+            
             if($i % $num1 === 0 && $i % $num2 === 0){
                 echo "<p>FizzBuzz ". $i . "</p>";
             }elseif($i % $num1 === 0 ){
@@ -45,9 +53,11 @@
             }elseif($i % $num2 === 0 ){
                 echo "<p>Buzz ". $i . "</p>";
             }
+            // 100以上の値が出力されているか
+            if($i >= 100 && ($i % $num1 === 0 || $i % $num2 === 0) ) break;
         }
 
-
+    }
 
     ?>
 </body>
