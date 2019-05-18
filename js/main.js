@@ -1,34 +1,51 @@
-  (function(){
+ (function(){
     'use strict';
-
     const fizz = document.getElementById('fizz');
     const buzz = document.getElementById('buzz');
     const submit = document.getElementById('submit');
     const result = document.getElementById('result');
 
-    const p = document.createElement('p');
-   
-
-    
-
     submit.addEventListener('click',()=>{
-        const f = fizz.value;
-        const b = buzz.value;
+        const fizzValue = parseInt(fizz.value, 10);
+        const buzzValue = parseInt(buzz.value, 10);
 
-       for(let i = 1; i < 50; i++){
+        // const a = document.querySelectorAll('p');
 
-            if(i % f === 0 && i % b === 0 ){
-                console.log('fizzbuzz');
-            }else if(i % f === 0){
-                console.log('fizz');
-            }else if(i % b === 0){
-                console.log('buzz');
-            }else{
-                console.log('fizz' + i * f);
-                console.log('buzz' + i * b);
-            }
+        // if(a){
+        //     document.body.removeChild(a);
+        // }
+
+        function isInt(value) {
+            return typeof value === "number";
         }
 
-    });
+        const notFizzNan = isNaN(fizzValue);
+        const notBuzzNan = isNaN(buzzValue);
 
-  }());    
+        if( isInt(fizzValue) && isInt(buzzValue) && notFizzNan === false && notBuzzNan === false){
+
+            console.log('test1');
+            for(let i = 1; i < 100; i++){
+                const p = document.createElement('p');
+                p.classList.add('add-txt');
+                if(i % fizzValue === 0 && i % buzzValue === 0 ){
+                    document.body.appendChild(p);
+                    p.textContent = `fizzbuzz${i}`;
+                }else if(i % fizzValue === 0){
+                    document.body.appendChild(p);
+                    p.textContent = `fizz${i}`;
+                }else if(i % buzzValue === 0){
+                    document.body.appendChild(p);
+                    p.textContent = `buzz${i}`;
+                }
+            }
+
+        }else{
+            console.log('test');
+            const alert = document.createElement(`p`);
+            alert.classList.add('add-txt');
+            document.body.appendChild(alert);
+            alert.textContent = "整数値のみ入力可能です。";
+        }
+    });
+  }());
