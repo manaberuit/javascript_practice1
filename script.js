@@ -31,7 +31,6 @@ if(checknumber.test(fizz) && checknumber.test(buzz)  ){
         
     
     }
-
 //数字以外が入力された場合エラーを吐く
 }else{
     result.innerHTML="<p>整数値を入力してください。</p>";
