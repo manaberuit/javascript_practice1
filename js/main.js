@@ -9,18 +9,21 @@
 
   // ■■■ クリックイベント start ■■■
   exec.addEventListener('click', () => {
-
-    const calculation =[];  // 計算結果格納変数
-    // const p = document.createElement('p');  // 要素追加コード
-    // p.textContent = '';
-
     // 整数判別式
     if(Number.isInteger(parseInt(fizz.value)) === false  || Number.isInteger(parseInt(buzz.value)) === false ){
       return result.textContent = "整数を入力してください";
     };
 
+    // 変数宣言
+    const calculation =[];  // 計算結果格納配列
+    const fizzFixed = parseInt(fizz.value,10);
+    const buzzFixed = parseInt(buzz.value,10);
+
+    const fizzCalc = fizzFixed;  // fizz計算結果格納変数
+    const buzzCalc = buzzFixed;  // buzz計算結果格納変数
+
     // ２倍にする計算コード
-    for(let i = 1 ; fizz.value * i < 100 && buzz.value * i < 100 ; i++ ){
+    while( fizzCalc < 100 || buzzCalc < 100 ){
       // fizzを計算結果配列に追加するコード
       if((fizz.value * i) % buzz.value === 0 ){
         if( fizz.value > buzz.value ){
