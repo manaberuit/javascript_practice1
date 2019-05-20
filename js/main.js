@@ -5,37 +5,29 @@
     const submit = document.getElementById('submit');
     const result = document.getElementById('result');
 
+
     submit.addEventListener('click',()=>{
         const fizzValue = parseInt(fizz.value, 10);
-        const buzzValue = parseInt(buzz.value, 10);
+        const buzzValue = parseInt(buzz.value, 10);       
 
-        // const a = document.querySelectorAll('p');
+        const FizzNan = isNaN(fizzValue);
+        const BuzzNan = isNaN(buzzValue);
 
-        // if(a){
-        //     document.body.removeChild(a);
-        // }
+        result.textContent = "";
 
-        function isInt(value) {
-            return typeof value === "number";
-        }
+        if( FizzNan === false && BuzzNan === false){
 
-        const notFizzNan = isNaN(fizzValue);
-        const notBuzzNan = isNaN(buzzValue);
-
-        if( isInt(fizzValue) && isInt(buzzValue) && notFizzNan === false && notBuzzNan === false){
-
-            console.log('test1');
             for(let i = 1; i < 100; i++){
                 const p = document.createElement('p');
                 p.classList.add('add-txt');
                 if(i % fizzValue === 0 && i % buzzValue === 0 ){
-                    document.body.appendChild(p);
+                    result.appendChild(p);
                     p.textContent = `fizzbuzz${i}`;
                 }else if(i % fizzValue === 0){
-                    document.body.appendChild(p);
+                    result.appendChild(p);
                     p.textContent = `fizz${i}`;
                 }else if(i % buzzValue === 0){
-                    document.body.appendChild(p);
+                    result.appendChild(p);
                     p.textContent = `buzz${i}`;
                 }
             }
@@ -44,8 +36,9 @@
             console.log('test');
             const alert = document.createElement(`p`);
             alert.classList.add('add-txt');
-            document.body.appendChild(alert);
+            result.appendChild(alert);
             alert.textContent = "整数値のみ入力可能です。";
         }
+
     });
   }());
