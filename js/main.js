@@ -4,15 +4,16 @@
   const fizz = document.getElementById('fizz');
   const buzz = document.getElementById('buzz');
   const exec = document.getElementById('exec'); //実行ボタン
+  const calcList = document.getElementById('calcList'); //エラーメッセージ
   const result = document.getElementById('result'); //エラーメッセージ
 
 
   // ■■■ クリックイベント start ■■■
   exec.addEventListener('click', () => {
     // 表示項目のクリア処理
-    while(){
-      
-    };
+    while(calcList.firstChild) {
+    calcList.removeChild(calcList.firstChild);
+    }
 
     // 整数判別式
     if(Number.isInteger(parseInt(fizz.value)) === false  || Number.isInteger(parseInt(buzz.value)) === false ){
@@ -49,9 +50,9 @@
     calculation.forEach((calc) => {
       console.log(`配列の要素：${calc}`);
 
-      const p = document.createElement('p');  // 要素追加コード
-      p.textContent = calc;
-      document.body.appendChild(p);
+      const li = document.createElement('li');  // 要素追加コード
+      li.textContent = calc;
+      calcList.appendChild(li);
     });
 
   });
