@@ -9,6 +9,11 @@
 
   // ■■■ クリックイベント start ■■■
   exec.addEventListener('click', () => {
+    // 表示項目のクリア処理
+    while(){
+      
+    };
+
     // 整数判別式
     if(Number.isInteger(parseInt(fizz.value)) === false  || Number.isInteger(parseInt(buzz.value)) === false ){
       return result.textContent = "整数を入力してください";
@@ -19,27 +24,24 @@
     const fizzFixed = parseInt(fizz.value,10);
     const buzzFixed = parseInt(buzz.value,10);
 
-    const fizzCalc = fizzFixed;  // fizz計算結果格納変数
-    const buzzCalc = buzzFixed;  // buzz計算結果格納変数
+    let fizzCalc = fizzFixed;  // fizz計算結果格納変数
+    let buzzCalc = buzzFixed;  // buzz計算結果格納変数
 
     // ２倍にする計算コード
     while( fizzCalc < 100 || buzzCalc < 100 ){
       // fizzを計算結果配列に追加するコード
-      if((fizz.value * i) % buzz.value === 0 ){
-        if( fizz.value > buzz.value ){
-          calculation.push("FizzBuzz " + fizz.value * i);
-        };
-      } else{
-        calculation.push("Fizz " + fizz.value * i);
-      };
-
-      // buzzを計算結果配列に追加するコード
-      if( (buzz.value * i) % fizz.value === 0 ){
-        if ( buzz.value > fizz.value ) {
-          calculation.push("FizzBuzz " + buzz.value * i);
-        };
-      }  else{
-        calculation.push("Buzz " + buzz.value * i);
+      if( fizzCalc === buzzCalc ){
+        calculation.push("FizzBuzz " + fizzCalc);
+        fizzCalc += fizzFixed;
+        buzzCalc += buzzFixed;
+      } else if ( fizzCalc < buzzCalc ) {
+        calculation.push("Fizz " + fizzCalc);
+        fizzCalc += fizzFixed;
+      } else if ( fizzCalc > buzzCalc ) {
+        calculation.push("Buzz " + buzzCalc);
+        buzzCalc += buzzFixed;
+      }else {
+        console.log("エラーが発生しました！");
       };
     }
 
