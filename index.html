@@ -6,14 +6,18 @@
   </head>
   <body>
     <h1>FizzBuzz問題</h1>
-      <p>FizzNum:
-        <input type="text" placeholder="整数値を入力してください">
-      </p>
-      <p>BuzzNum:
-        <input type="text" placeholder="整数値を入力してください">
-      </p>
-      <input type="button" value="実行" onclick="exec()">
+      <form>
+          <p>FizzNum:
+              <input id="fizzNum" name="fizzNum" type="text" size="30"
+              placeholder="整数値を入力してください" /></p>
+          <p>BuzzNum:
+              <input id="buzzNum" name="buzzNum" type="text" size="30"
+              placeholder="整数値を入力してください" /></p>
+      </form>
+
+      <input id="btn" type="button" value="実行" onclick="exec()">
       <p>出力</p>
+      <div id="output"></div>
 
       <script type="text/javascript" src="main.js"></script>
       <noscript>Javascriptが利用できません</noscript>
