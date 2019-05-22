@@ -7,7 +7,6 @@
     //数字のみかどうかチェック。非負整数のみ。
     const fizz_check = (/^(0|[1-9][0-9]*)$/).test(fizz);
     const buzz_check = (/^(0|[1-9][0-9]*)$/).test(buzz);
-
     //数字以外が含まれていたら検出してエラーメッセージを表示
     if (!(fizz_check && buzz_check)){
       document.querySelector("p.message").textContent = "整数値を入力してください"
@@ -24,7 +23,7 @@
         }else if(i % buzz === 0){
           text_fizz_buzz +="Buzz "+i.toString(10)+"<br>";
         }
-      }
+    }
       //出力エリアの初期化
       document.querySelector("p.message").textContent ="";
       //結果出力
