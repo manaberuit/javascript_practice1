@@ -1,1 +1,12 @@
-src/
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>kadai 1</title>
+</head>
+<body>
+<p>Hello World</p>
+
+<script src="js/main.js" text/javascript></script>
+</body>
+</html>
