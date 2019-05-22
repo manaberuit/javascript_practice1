@@ -16,9 +16,6 @@ document.addEventListener('DOMContentLoaded',function(){
             let text = document.createTextNode('整数値を入力してください');
             anchor.appendChild(text);
             output.appendChild(anchor);
-
-
-<<<<<<< HEAD
         for(let i = 1; i < 100; i++){
             const output = document.getElementById('output');
             const anchor = document.createElement('p');
@@ -34,7 +31,6 @@ document.addEventListener('DOMContentLoaded',function(){
                 let text = document.createTextNode("Buzz"+" "+i);
                 anchor.appendChild(text);
                 output.appendChild(anchor);
-=======
         }else{
             for(let i = 1; i < 100; i++){
                 //const output = document.getElementById('output');
@@ -61,7 +57,6 @@ document.addEventListener('DOMContentLoaded',function(){
                     output.appendChild(anchor);
                     result = NaN
                 }
->>>>>>> 9070ae7f84711801631174beca58e0a1d3b4d9cd
             }
         }
 
