@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
-#fizz, #buzz {
+#fizzNum, #buzzNum {
     width: 200px;
+}
+
+#fizzNum {
+    margin-left: 12px;
+}
+
+#buzzNum {
+    margin-left: 4px;
 }
