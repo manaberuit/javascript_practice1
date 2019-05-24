@@ -1,12 +1,12 @@
 'use strict'
 
 
-const FizzBuzz = () => {
+const fizzBuzz = () => {
     document.getElementById('change').innerHTML = '';
-    let num1 = document.getElementById('fizzNum').value;
-    let num2 = document.getElementById('buzzNum').value;
-    let intNum1 = parseInt(num1);
-    let intNum2 = parseInt(num2);
+    const num1 = document.getElementById('fizzNum').value;
+    const num2 = document.getElementById('buzzNum').value;
+    const intNum1 = parseInt(num1);
+    const intNum2 = parseInt(num2);
     
     if (isNaN(intNum1) || isNaN(intNum2)) {
         document.getElementById('change').innerHTML ='整数値を入力してください';
@@ -22,6 +22,8 @@ const FizzBuzz = () => {
         }   
     } 
     }
+
+document.getElementById('put').onclick = fizzBuzz;
 
 
 
