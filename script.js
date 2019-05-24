@@ -1,10 +1,6 @@
 'use strict'
 
 
-// **********************
-// よろしくお願いします
-// ********************** 
-
 const FizzBuzz = () => {
     document.getElementById('change').innerHTML = '';
     let num1 = document.getElementById('fizzNum').value;
