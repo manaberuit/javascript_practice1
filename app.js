@@ -3,8 +3,8 @@ document.querySelector('.js-submit').addEventListener('click', function(e) {
   e.preventDefault();
 
   // ユーザー入力値を取得
-  var fizzNum = parseInt(document.querySelector('.js-input-fizz').value);
-  var buzzNum = parseInt(document.querySelector('.js-input-buzz').value);
+  var fizzNum = Number(document.querySelector('.js-input-fizz').value);
+  var buzzNum = Number(document.querySelector('.js-input-buzz').value);
 
   // 結果表示エリアのDOMを取得
   var resultArea = document.querySelector('.js-result');
@@ -17,7 +17,7 @@ document.querySelector('.js-submit').addEventListener('click', function(e) {
 
   // エラーメッセージ
   var errMsg1 = '<p>整数値を入力してください。</p>';
-  var errMsg2 = '<p>0以上で入力してください。</p>';
+  var errMsg2 = '<p>1以上で入力してください。</p>';
   var errMsg3 = '<p>' + max + '以下で入力してください。</p>';
 
 
@@ -28,7 +28,7 @@ document.querySelector('.js-submit').addEventListener('click', function(e) {
   }
 
   // 最小値のバリデーション
-  if(fizzNum < 0 || buzzNum < 0) {
+  if(fizzNum <= 0 || buzzNum <= 0) {
     resultArea.insertAdjacentHTML('afterbegin', errMsg2);
     return;
   }
