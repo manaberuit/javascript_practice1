@@ -36,7 +36,7 @@ document.querySelector('.js-submit').addEventListener('click', function(e) {
   // 最大値のバリデーション
   if(fizzNum > max || buzzNum > max) {
     resultArea.insertAdjacentHTML('afterbegin', errMsg3);
-    return;    
+    return;
   }
 
 
@@ -51,12 +51,12 @@ document.querySelector('.js-submit').addEventListener('click', function(e) {
 
     if(i % fizzNum === 0) {
       html += 'Fizz ' + i + '<br>';
-      continue; 
+      continue;
     }
 
     if(i % buzzNum === 0) {
       html += 'Buzz ' + i + '<br>';
-      continue; 
+      continue;
     }
   }
 
