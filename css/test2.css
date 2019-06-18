@@ -1,0 +1,30 @@
+body{
+    width: 300px;
+    height: auto;
+    margin-left: 80px;
+}
+
+input{
+    position: relative;
+    right: 30px;
+    float: right; 
+}
+
+
+button{
+    position: relative;
+    top: 3px;
+    margin: 2px 0px;
+}
+
+h2{
+    position: relative;
+    right: 10px;
+    font-size: 15px;
+}
+
+p{
+    font-size: 12px;
+    margin: 5px 0px;
+}
+
