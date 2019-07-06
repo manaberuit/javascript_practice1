@@ -7,9 +7,22 @@
         const fizznum = document.getElementById('fizznum').value;
         const buzznum = document.getElementById('buzznum').value;
         let fnum = parseInt(fizznum);
+        let bnum = parseInt(buzznum);
+        output.innerText = "整数値を入力してください";
 
-        for(let i = 1; i < 10; i++){
-          output.innerText = "FizzNum" + " " + fnum * i;
+        if(1 <= fnum <= 100 && 1 <= bnum <= 100){
+          output.innerText = "";
+        for(let i = 1; i < 101; i++){
+          if(i % fnum == 0 && i % bnum == 0){
+            output.innerText += "FizzBuzz" + " " + i + "\n";
+          }else if(i % fnum == 0){
+            output.innerText += "Fizz" + " " + i + "\n";
+          }else if(i % bnum == 0){
+            output.innerText += "Buzz" + " " + i + "\n";
+          }
         }
-      });
+      }else{
+        output.innerText = "整数値を入力してください";
       }
+      });
+    }
