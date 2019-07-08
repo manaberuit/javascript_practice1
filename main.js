@@ -13,12 +13,8 @@ function calcFizzBuzz() {
     if (Math.sign(inputFizzValue) && Math.sign(inputBuzzValue) && (inputFizzValue > 0) && (inputBuzzValue > 0)) {
         const outputSectionDom = document.getElementById('output-section');
 
-        // #output-sectionの元のテキストを削除
-        outputSectionDom.innerHTML = '';
-
         // 計算結果の出力html
         let outputSectionHtml = '';
-
 
         const outputDomPerth = document.createDocumentFragment();
 
@@ -48,8 +44,8 @@ function calcFizzBuzz() {
             }
         }
 
-        // FizzBuzzで作ったDomをまとめてパース
-        outputSectionDom.appendChild(outputDomPerth);
+        // #output-sectionの元のテキストを削除
+        outputSectionDom.innerHTML = '';
 
         // FizzBuzzで作ったDomをまとめてパース
         outputSectionDom.appendChild(outputDomPerth);
