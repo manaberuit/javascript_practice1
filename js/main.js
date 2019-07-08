@@ -10,7 +10,7 @@
         let bnum = parseInt(buzznum);
         output.innerText = "整数値を入力してください";
 
-        if(1 <= fnum <= 100 && 1 <= bnum <= 100){
+        if(fnum >= 1 && fnum <= 100 && bnum >= 1 && bnum <= 100){
           output.innerText = "";
         for(let i = 1; i < 101; i++){
           if(i % fnum == 0 && i % bnum == 0){
