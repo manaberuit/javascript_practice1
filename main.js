@@ -25,11 +25,11 @@ function calcFizzBuzz() {
             let loopSaveNum = '';
 
             // Fizzの倍数なら出力
-            if ((num % inputFizzValue) == 0) {
+            if ((num % inputFizzValue) === 0) {
                 loopSaveName += 'Fizz';
                 loopSaveNum = num;
             }
-            if ((num % inputBuzzValue) == 0) {
+            if ((num % inputBuzzValue) === 0) {
                 loopSaveName += 'Buzz';
                 loopSaveNum = num;
             }
@@ -37,8 +37,8 @@ function calcFizzBuzz() {
 
             if (loopSaveHtml) {
                 // outputSectionHtml += loopSaveHtml + "\n";
-                let createLowDom = document.createElement('div');
-                let createLowDomText = document.createTextNode(loopSaveHtml);
+                const createLowDom = document.createElement('div');
+                const createLowDomText = document.createTextNode(loopSaveHtml);
                 createLowDom.appendChild(createLowDomText);
                 outputDomPerth.appendChild(createLowDom);
             }
