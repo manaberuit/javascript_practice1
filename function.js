@@ -8,7 +8,6 @@ document.getElementById("execution-button").onclick = function() {
 
   }else{
     target.innerHTML = '<p>整数値を入力してください</p>';
-    console.log("失敗パターン")
   }
   
 }
@@ -32,6 +31,12 @@ function createNums(num) {
 
 function creatFizzBuzzArray(fizzs, buzzs) {
   // それっぽい形にしてfizz 4 buzz 6 fizzbuzz 12の配列にする
+  var fizz = "Fizz"
+  var buzz = "Buzz"
+  var fizzBuzz = "FizzBuzz"
+  
+
+
 }
 
 function displayFizzBuzz(fizzBuzzAry) {
