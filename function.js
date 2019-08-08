@@ -1,6 +1,6 @@
-document.getElementById("execution-button").addEventListener('click', FizzBuzz, false);
+document.getElementById("execution-button").addEventListener('click', execFizzBuzz, false);
 
-function FizzBuzz () {
+function execFizzBuzz () {
 
   const Fizz = document.getElementById("fizz-area").value
   const Buzz = document.getElementById("buzz-area").value
@@ -53,7 +53,7 @@ function createIncludeTextFizzBuzzArray(fizzBuzzAry, fizz, buzz) {
 }
 
 function whichFizzBuzzType(num, fizz, buzz) {
-  if ( isNaNFizzBuzz(num, fizz, buzz) ) {
+  if ( num % Fizz === 0 ) {
     return 'FizzBuzz';
   } else if (isNaNFizz(num, fizz)){
     return 'Fizz';
@@ -64,20 +64,16 @@ function whichFizzBuzzType(num, fizz, buzz) {
 
 function isNaNFizz(num) {
   const Fizz = document.getElementById("fizz-area").value
-  return (num % Fizz == 0) ? true : false;
+  return (num % Fizz === 0) ? true : false;
 }
 
 function isNaNBuzz(num) {
   const Buzz = document.getElementById("buzz-area").value
-  return (num % Buzz == 0) ? true : false;
-}
-
-function isNaNFizzBuzz(num) {
-  return (isNaNFizz(num) && isNaNBuzz(num)) ? true : false;
+  return (num % Buzz === 0) ? true : false;
 }
 
 function displayFizzBuzz(fizzBuzzAry, target) {
-  target.innerHTML = null;
+  target.innerHTML = "";
   fizzBuzzAry.forEach(function(element) {
     text = document.createElement('p');
     text.textContent = element;
