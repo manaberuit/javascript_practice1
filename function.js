@@ -53,23 +53,27 @@ function createIncludeTextFizzBuzzArray(fizzBuzzAry, fizz, buzz) {
 }
 
 function whichFizzBuzzType(num, fizz, buzz) {
-  if ( num % Fizz === 0 ) {
+  if ( isNamFizzBuzz(num, fizz, buzz)  ) {
     return 'FizzBuzz';
-  } else if (isNaNFizz(num, fizz)){
+  } else if (isNamFizz(num, fizz)){
     return 'Fizz';
-  }else if( isNaNBuzz(num, buzz )){
+  }else if( isNamBuzz(num, buzz )){
     return 'Buzz';
   }
 }
 
-function isNaNFizz(num) {
+function isNamFizz(num) {
   const Fizz = document.getElementById("fizz-area").value
   return (num % Fizz === 0) ? true : false;
 }
 
-function isNaNBuzz(num) {
+function isNamBuzz(num) {
   const Buzz = document.getElementById("buzz-area").value
   return (num % Buzz === 0) ? true : false;
+}
+
+function isNamFizzBuzz(num) {
+  return (isNamFizz(num) && isNamBuzz(num)) ? true : false;
 }
 
 function displayFizzBuzz(fizzBuzzAry, target) {
@@ -84,7 +88,3 @@ function displayFizzBuzz(fizzBuzzAry, target) {
 function disPlayAlert(target) {
   target.innerHTML = '<p>整数値を入力してください</p>';
 }
-
-
-
-//　jsにおけるhtmlのclasとIDの使い分け方を知りたい
