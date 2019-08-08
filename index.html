@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FizzBuZZ問題</title>
+    <script type="text/javascript">
+      function OnbuttonClick() {
+          var fizznum = document.getElementById("fizz").value;
+          var buzznum = document.getElementById("buzz").value;
+          var str = "";
+            if (!Number.isFinite(Number(fizznum))  || !Number.isFinite(Number(buzznum)) ){
+              var msg = "整数値を入力してください";
+              document.getElementById("output").innerHTML = msg;
+            } else {
+                for (var i = 1; i < 20; i++){
+                  str += "Fizz " + fizznum*i + "<br>" + "Buzz " + buzznum*i + "<br>" ;
+                 }
+                 document.getElementById("output").innerHTML = str;
+            }
+       }
+    </script>
+  </head>
+  <body>
+    <h1>FizzBuzz問題</h1>
+    <br>
+    FizzNum:<input type="text" name="fizz" value="" id ="fizz" placeholder="整数値を入力してください"><br>
+    BuzzNum:<input type="text" name="buzz" value=""  id = "buzz" placeholder="整数値を入力してください"><br>
+    <button type="button" name="button" onclick="OnbuttonClick()">実行</button>
+    <br><br>
+    <div class="output">【出力】<br><br>
+          <div id = "output"></div>
+    </div>
+  </body>
+</html>
