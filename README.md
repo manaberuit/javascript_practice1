@@ -1,5 +1,5 @@
 # 【サブ課題】FizzBuzz問題
-## `cosole.log()`を用いて、以下が表示されるようにしましょう。
+## `console.log()`を用いて、以下が表示されるようにしましょう。
 ![完成画像](https://github.com/manaberuit/javascript_practice1/blob/image/javascript_practice1_sub1.PNG)  
 
 ## 課題の提出方法
