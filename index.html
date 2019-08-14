@@ -3,48 +3,22 @@
 <head>
  <meta charset="utf-8">
  <title>FizzBuzz問題</title>
- <style>
-    #fizz{
-      margin-left: 8px;
-    }
-
-    #fizz,#buzz{
-      margin-bottom: 5px;
-    }
- </style>
+ <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <h1>FizzBuzz問題</h1>
-  <lebel for="fizz">FizzNum:</lebel>
-  <input id="fizz" type="text" placeholder="整数値を入力してください">
-  <br>
-  <label for="buzz">BuzzNum:</label>
-  <input id="buzz" type="text" placeholder="整数値を入力してください">
-  <br>
-  <button id="btn">送信</button>
-  <br>
-  <p>【出力】</p>
-  <div id="output"></div>
+  <div>
+    <label for="fizz">FizzNum:</label>
+    <input id="fizz" type="text" placeholder="整数値を入力してください">
+  </div>
+  <div>
+    <label for="buzz">BuzzNum:</label>
+    <input id="buzz" type="text" placeholder="整数値を入力してください">
+  </div>
+  <button id="send-btn">送信</button>
+  <p class="output-title">【出力】</p>
+  <div id="output">整数値を入力してください</div>
 
-<script>
-  let btn=document.getElementById('btn');
- 
-  btn.addEventListener('click', function() {
-  let fizz = document.getElementById('fizz').value;
-  let buzz = document.getElementById('buzz').value;
-  let target = document.getElementById('output');
-  target.innerHTML = "";
-
-  for(let i = 1 ; i <= 100 ; i++){
-      if(i % fizz ===0 && i % buzz == 0){
-        target.insertAdjacentHTML('beforeend',`FizzBuzz ${i}<br>`);
-      }else if(i % fizz === 0){
-        target.insertAdjacentHTML('beforeend',`Fizz ${i}<br>`);
-      }else if(i % buzz == 0){
-        target.insertAdjacentHTML('beforeend',`Buzz ${i}<br>`);
-      }
-    }
-  });
-</script>
+  <script src="js/main.js"></script>
 </body>
 </html>

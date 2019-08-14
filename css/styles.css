@@ -1,0 +1,11 @@
+#fizz{
+  margin-left: 8px;
+}
+
+#fizz,#buzz{
+  margin-bottom: 5px;
+}
+
+.output-title{
+	margin-top: 20px;
+}
