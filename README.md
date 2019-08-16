@@ -10,3 +10,7 @@
 4. 更新内容をリモートリポジトリへとpushする。
 5. 「kadai」ブランチから「master」ブランチへのPull Requestを作成する。
 6. 作成したPull RequestのURLをご連絡ください。
+
+
+テスト修正！
+あああああ
