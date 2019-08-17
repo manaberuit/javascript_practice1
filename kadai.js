@@ -30,8 +30,8 @@
 
 
 
-    elem.textContent = '数値を入力';
     if (isNaN(fizzInputValue) || isNaN(buzzInputValue)) {
+      elem.textContent = '数値を入力';
     } else if (fizzInputValue <= 0 || buzzInputValue <= 0) {
       elem.textContent = '';
     } else {
@@ -39,7 +39,7 @@
       let fizzResult = 0;
       let buzzResult = 0;
 
-      while ( fizzResult < 100 && buzzResult < 100){
+      do {
         i++;
         fizzResult = fizzInputValue * i;
         buzzResult = buzzInputValue * i;
@@ -50,7 +50,8 @@
         elem.textContent = document.write(`fizz： ${fizzResult}\n
         buzz： ${buzzResult}`);
 
-      }
+      } while (fizzResult < 100 && buzzResult < 100);
+
     }
 
 
