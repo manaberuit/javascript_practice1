@@ -10,11 +10,11 @@ sendBtn.addEventListener('click', function() {
 
 	for(let i = 1; i <= 100; i++){
 	  if(i % fizz === 0 && i % buzz === 0){
-	    target.insertAdjacentHTML('beforeend',`FizzBuzz ${i}\n`);
+	    target.insertAdjacentHTML('beforeend',`<div>FizzBuzz ${i}</div>`);
 	  }else if(i % fizz === 0){
-	    target.insertAdjacentHTML('beforeend',`Fizz ${i}\n`);
+	    target.insertAdjacentHTML('beforeend',`<div>Fizz ${i}</div>`);
 	  }else if(i % buzz === 0){
-	    target.insertAdjacentHTML('beforeend',`Buzz ${i}\n`);
+	    target.insertAdjacentHTML('beforeend',`<div>Buzz ${i}</div>`);
 	  }
 	}
 });
