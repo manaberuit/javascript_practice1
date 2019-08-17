@@ -39,7 +39,7 @@
       let fizzResult = 0;
       let buzzResult = 0;
 
-      while ( fizzResult <= 100 || buzzResult <= 100){
+      while ( fizzResult < 100 && buzzResult < 100){
         i++;
         fizzResult = fizzInputValue * i;
         buzzResult = buzzInputValue * i;
