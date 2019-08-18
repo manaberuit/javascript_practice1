@@ -47,8 +47,11 @@
         console.log(`fizz： ${fizzResult}`);
         console.log(`buzz： ${buzzResult}`);
 
-        elem.textContent = document.write(`fizz： ${fizzResult}\n
-        buzz： ${buzzResult}`);
+        elem.textContent = document.write(`fizzの値： ${fizzResult}`);
+
+        let div = document.createElement('div');
+        div.textContent = document.write(`buzzの値： ${buzzResult}`);
+        document.section.appendchild(div);
 
       } while (fizzResult < 100 && buzzResult < 100);
 
