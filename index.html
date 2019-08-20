@@ -3,32 +3,61 @@
 <head>
     <meta charset="utf-8">
     <title>FizzBuzz問題</title>
+    <script type="text/javascript">
+    //送信が押された時
+    function OnButtonClick(){
+        //valueは文字列なので数値にする必要がある？？parseInt使う？？
+        let fizz = document.getElementById("fizz").value;
+        let buzz = document.getElementById("buzz").value;
+        console.log(fizz);
+        console.log(buzz);
+        
+        let valid = /[^0-9]+/;
+        let fizzresult = parseInt(fizz,10).match(valid);
+        let buzzresult = parseInt(buzz,10).match(valid);
+        console.log(fizzresult);
+        console.log(buzzresult);
+        
+        //fizzとbuzzのバリデチェック
+        let flag = 0;
+        // 半角数字とマッチするならフラグ１
+        if(fizzresult === true){
+            flag = 1;
+            console.log(fizz);
+            console.log(buzz);
+        }else if(buzzresult === true){
+            flag = 1;  
+        }else{
+            flag = 0; 
+        }
+        
+        //fizzとbuzzの値が半角数字以外ならば「整数値を入力してください」を出力
+        if(flag === 0){
+            document.getElementById('output').innerHTML = '整数値を入力してください';
+        }else{
+            //for文でiをインクリメント
+            for(let i = 1;i< 100; i++){
+                if(i % fizz === 0){
+                    document.getElementById('output').innerHTML = 'Fizz '+ i;
+                    document.getElementById('output').innerHTML = 'Buzz '+ i;
+                }else if(i % fizz*buzz === 0){
+                    document.getElementById('output').innerHTML = 'FizzBuzz '+ i;
+                }
+            }
+        }
+    }
+    </script>
 </head>
 <body>
     <h1>FizzBuzz問題</h1>
-    <form action="" method="POST">
+    <form action="" method="POST" name="form">
         FizzNum :
-        <input type="text" name="fizz"　class="fizz">
+        <input type="text" name="fizz"　id="fizz" placeholder="整数値を入力してください"><br>
         BuzzNum :
-        <input type="text" name="buzz" class="buzz">
-        <input type="submit" value="実行">
+        <input type="text" name="buzz" id="buzz" placeholder="整数値を入力してください"><br>
+        <input type="submit" id="submit" value="実行" onClick="return check();">
     </form>
-    <p>【出力】</p>
-    <script type="text/javascript">
-        let fizznum = $_POST['fizz'];
-        let buzznum = $_POST['buzz'];    
-        if(prag_match(/^[0-9]+$/),$_POST){
-            console.log("整数値を入力");
-        }else{
-            for(let number =1;number < 100;number++){
-                if(number % fizznum === 0){ 
-                    console.log('Fizz '+number);
-                }else if(number % buzznum === 0){
-                    console.log('Buzz '+number);
-                }elese if((number % (buzznum*fizznum) === 0))
-                    console.log('FizzBuzz '+number);
-            }
-        }
-    </script>
+    <p id="output">【出力】</p>
+    
   </body>
 </html>
