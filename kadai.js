@@ -5,8 +5,11 @@
   //ボタンの要素を取得
   let btn = document.querySelector('button');
 
-  // pの要素を取得
-  let elem = document.querySelector('.output p');
+  // 結果表示の要素を取得
+  let output = document.getElementById('output');
+
+  // 結果表示のpの要素を取得
+  let elem = document.querySelector('#output p');
 
   //fizzInput,buzzInputの要素を取得
   // let mathFizz = document.getElementById('fizzInput');
@@ -35,28 +38,26 @@
     } else if (fizzInputValue <= 0 || buzzInputValue <= 0) {
       elem.textContent = '';
     } else {
-      let i = 0;
-      let fizzResult = 0;
-      let buzzResult = 0;
-
-      do {
-        i++;
-        fizzResult = fizzInputValue * i;
-        buzzResult = buzzInputValue * i;
-
-        console.log(`fizz： ${fizzResult}`);
-        console.log(`buzz： ${buzzResult}`);
-
-        elem.textContent = document.write(`fizzの値： ${fizzResult}`);
-
-        let div = document.createElement('div');
-        div.textContent = document.write(`buzzの値： ${buzzResult}`);
-        document.section.appendchild(div);
-
-      } while (fizzResult < 100 && buzzResult < 100);
-
+      elem.parentNode.removeChild(elem);
+      for (let i = 1; i < 100; i++) {
+        if (i % (fizzInputValue * buzzInputValue) === 0) {
+          // console.log(`FizzBuzzの値：${i}`);
+          let pItem = document.createElement('p');
+          pItem.textContent = (`FizzBuzzの値： ${i}`);
+          output.appendChild(pItem);
+        } else if (i % fizzInputValue === 0) {
+          // console.log(`Fizzの値：${i}`);
+          let pItem = document.createElement('p');
+          pItem.textContent = (`Fizzの値： ${i}`);
+          output.appendChild(pItem);
+        } else if (i % buzzInputValue === 0) {
+          // console.log(`Buzzの値：${i}`);
+          let pItem = document.createElement('p');
+          pItem.textContent = (`Buzzの値： ${i}`);
+          output.appendChild(pItem);
+        }
+      }
     }
-
 
   });
 
