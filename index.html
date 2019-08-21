@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>【JavaScript 課題１】FizzBuzz問題</title>
+        <style>
+            span {
+                width: 90px;
+                display: inline-block;
+            }
+            .list {
+                margin: 0;
+            }
+            #num1, #num2 {
+                width: 150px;
+            }
+            #btn {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>FizzBuzz問題</h1>
+        <form id="input" action="javascript:void(0)" method="post">
+            <p><span>FizzNum:</span><input id="num1" type="text" name="fizznum" placeholder="整数値を入力してください"></p>
+            <p><span>BuzzNum:</span><input id="num2" type="text" name="buzznum" placeholder="整数値を入力してください"></p>
+            <p><input id="btn" type="submit" value="実行"></p>
+        </form>
+        <p>【出力】</p>
+        <div id="output">
+            
+        </div>
+        <script>
+            'use script';
+            
+            // 出力エリア
+            target = document.getElementById("output");
+
+            document.getElementById("btn").addEventListener('click', () => {
+                var fizz = document.forms.input.num1.value;
+                var buzz = document.forms.input.num2.value;
+                var sum = fizz + buzz;
+
+                // 整数の場合
+                if (sum.search(/^[-]?[0-9]+$/) === 0) {
+                    // ループ回数
+                    var count1 = Math.floor(100 / fizz);
+                    var count2 = Math.floor(100 / buzz);
+                    
+                    // 空の配列を用意
+                    var array = [];
+
+                    // 配列の中に全ての値を格納する
+                    for (let i = 0; i < count1; i++ ) {
+                        array.push(fizz * (i + 1));
+                    };
+                    for (let i = 0; i < count2; i++ ) {
+                        array.push(buzz * (i + 1));
+                    };
+
+                    // 配列の重複をはじく
+                    var array2 = Array.from(new Set(array));
+
+                    // 配列を並べ換える。あまり意味が分かっていない部分
+                    var array3 = array2.sort(function(a,b){
+                        return (a < b ? -1 : 1);
+                    });
+                    
+                    // 配列を出力
+                    for (let i = 0; i < array3.length; i++) {
+                        var list = document.createElement("p");
+                        list.className = "list";
+                        if (array3[i] % fizz === 0 && array3[i] % buzz !== 0) {
+                            list.innerHTML = `Fizz ${array3[i]}`;
+                        } else if (array3[i] % fizz !== 0 && array3[i] % buzz === 0) {
+                            list.innerHTML = `Buzz ${array3[i]}`;
+                        } else {
+                            list.innerHTML = `FizzBuzz ${array3[i]}`;
+                        }
+                        target.appendChild(list);
+                    };
+
+                // 整数ではない場合
+                } else {
+                    target.innerHTML = "整数値を入力してください";
+                }
+            });
+        </script>
+    </body>
+</html>
