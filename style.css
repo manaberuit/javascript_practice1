@@ -1,0 +1,18 @@
+/* クラスセレクタを使う
+span {
+    width: 90px;
+    display: inline-block;
+}　*/
+
+.inp-item {
+    width: 90px;
+    display: inline-block;
+}
+
+.result {
+    margin: 0;
+}
+
+.input-num {
+    width: 150px;
+}
