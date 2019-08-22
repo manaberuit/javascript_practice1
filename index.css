@@ -1,0 +1,13 @@
+.container{
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+p{
+    margin: 0;
+}
+
+.output{
+    padding: 10px 0;
+}
