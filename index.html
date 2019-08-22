@@ -1,34 +1,54 @@
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>FizzBuZZ問題</title>
-    <script type="text/javascript">
-      function OnbuttonClick() {
-          var fizznum = document.getElementById("fizz").value;
-          var buzznum = document.getElementById("buzz").value;
-          var str = "";
-            if (!Number.isFinite(Number(fizznum))  || !Number.isFinite(Number(buzznum)) ){
-              var msg = "整数値を入力してください";
-              document.getElementById("output").innerHTML = msg;
-            } else {
-                for (var i = 1; i < 20; i++){
-                  str += "Fizz " + fizznum*i + "<br>" + "Buzz " + buzznum*i + "<br>" ;
-                 }
-                 document.getElementById("output").innerHTML = str;
-            }
-       }
-    </script>
-  </head>
-  <body>
-    <h1>FizzBuzz問題</h1>
-    <br>
-    FizzNum:<input type="text" name="fizz" value="" id ="fizz" placeholder="整数値を入力してください"><br>
-    BuzzNum:<input type="text" name="buzz" value=""  id = "buzz" placeholder="整数値を入力してください"><br>
-    <button type="button" name="button" onclick="OnbuttonClick()">実行</button>
-    <br><br>
-    <div class="output">【出力】<br><br>
-          <div id = "output"></div>
-    </div>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>FizzBuZZ問題</title>
+  <style>
+    label {
+      display: block;
+      float: left;
+      width:85px;
+    }
+    button {
+      margin-bottom:25px;
+    }
+  </style>
+</head>
+<body>
+  <h1>FizzBuzz問題</h1>
+  <div>
+  <label for="fizz">FizzNum:</label>
+  <input type="text" name="fizz" id="fizz" placeholder="整数値を入力してください">
+  </div>
+  <div>
+  <label for="buzz">BuzzNum:</label>
+  <input type="text" name="buzz" id="buzz" placeholder="整数値を入力してください">
+  </div>
+  <button type="button" id="execFizzBuzz">実行</button>
+  <div class="output">【出力】
+    <p id = "output"></p>
+  </div>
+  <script>
+  const execBtn = document.getElementById('execFizzBuzz');
+  execBtn.addEventListener("click", execFizzBuzz, false);
+
+  function execFizzBuzz() {
+    let fizzNum = document.getElementById("fizz").value;
+    let buzzNum = document.getElementById("buzz").value;
+    let str = "";
+    const regexp = new RegExp(/^-?[0-9]+$/);
+    let resultFizz = regexp.test(parseInt(fizzNum));
+    let resultBuzz = regexp.test(parseInt(buzzNum));
+      if (!resultFizz  || !resultBuzz) {
+        let msg = "整数値を入力してください";
+        document.getElementById("output").innerHTML = msg;
+      } else {
+          for (let i = 1; i < 20; i++){
+            str = str + '<div>' + "Fizz " + fizzNum * i + '</div><div>' + "Buzz " + buzzNum * i + '</div>';
+          }
+          document.getElementById("output").innerHTML = str;
+      }
+  }
+  </script>
+</body>
 </html>
