@@ -38,7 +38,7 @@
     } else if (fizzInputValue <= 0 || buzzInputValue <= 0) {
       elem.textContent = '';
     } else {
-      elem.parentNode.removeChild(elem);
+      // elem.parentNode.removeChild(elem);
       for (let i = 1; i < 100; i++) {
         if (i % (fizzInputValue * buzzInputValue) === 0) {
           // console.log(`FizzBuzzの値：${i}`);
