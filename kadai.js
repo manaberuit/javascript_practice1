@@ -15,7 +15,7 @@
   // let mathFizz = document.getElementById('fizzInput');
   // let mathBuzz = document.getElementById('buzzInput');
 
-
+// querySelectorAll
 
   //実行キーを押す
   btn.addEventListener('click', () => {
@@ -23,13 +23,15 @@
     if(document.getElementsByClassName('pItem')) {
       //何か処理を書く
       console.log('true');
+      console.log(document.getElementsByClassName('pItem'));
+
       // pItemのclass要素が存在する場合は削除。
-      let removeChilds = document.getElementsByClassName('pItem');
-      for (let n = 0; n < removeChilds.length; n++) {
-        removeChilds[n].parentNode.removeChild(removeChilds[n])
-      }
-    } else {
-      console.log('false');}
+        let removeChilds = document.getElementsByClassName('pItem');
+        while(removeChilds.length) {
+          removeChilds.item(0).remove();
+        }
+      } else {
+        console.log('false');}
 
 
 
