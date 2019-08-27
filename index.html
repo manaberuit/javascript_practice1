@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>【JavaScript 課題１】FizzBuzz問題</title>
+        <!-- 外部から読み込む -->
+        <link rel="stylesheet" href="style.css" type="text/css">
+        
+    </head>
+    <body>
+        <h1>FizzBuzz問題</h1>
+        <form id="input" action="#" method="post">
+            <!-- 一行一要素 -->
+            <p>
+                <!-- spanタグにclass付与 -->
+                <span class="inp-item">FizzNum:</span>
+                <input id="num1" class="input-num" type="text" name="fizznum" placeholder="整数値を入力してください">
+            </p>
+            <p>
+                <!-- spanタグにclass付与 -->
+                <span class="inp-item">BuzzNum:</span>
+                <input id="num2" class="input-num" type="text" name="buzznum" placeholder="整数値を入力してください">
+            </p>
+            <p>
+                <!-- id名を具体的に -->
+                <!-- typeをsubmitにするとリロードされてしまうのでbuttonに -->
+                <input id="exec-btn" type="button" value="実行">
+            </p>
+        </form>
+        <p>【出力】</p>
+        <!-- 外部から読み込む。divは消去して、jsで生成してみる -->
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
