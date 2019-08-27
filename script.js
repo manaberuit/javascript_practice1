@@ -7,8 +7,8 @@ document.getElementById("exec-btn").addEventListener('click', () => {
     const buzzNum = document.forms.input.num2.value;
     const sum = fizzNum + buzzNum;
 
-    //　二回目以降の場合、出力結果を消去する
-    if ( document.getElementById("output") !== null ) {
+    // 二回目以降の場合、出力結果を消去する
+    if ( document.getElementById("output")) {
         document.getElementById("output").remove();
     };
 
@@ -19,18 +19,18 @@ document.getElementById("exec-btn").addEventListener('click', () => {
 
     // 整数の場合
     if (sum.search(/^[-]?[0-9]+$/) === 0) {
-        for (let i = 0; i < 100; i++) {
+        for (let i = 1; i < 100; i++) {
             const result = document.createElement("p");
             result.setAttribute("class", "result");
 
-            if ((i + 1) % fizzNum === 0 && (i + 1) % buzzNum !== 0) {
-                result.innerHTML = `Fizz ${i + 1}`;
+            if (i % fizzNum === 0 && i % buzzNum !== 0) {
+                result.innerHTML = `Fizz ${i}`;
                 outputArea.appendChild(result);
-            } else if ((i + 1) % fizzNum !== 0 && (i + 1) % buzzNum === 0) {
-                result.innerHTML = `Buzz ${i + 1}`;
+            } else if (i % fizzNum !== 0 && i % buzzNum === 0) {
+                result.innerHTML = `Buzz ${i}`;
                 outputArea.appendChild(result);
-            } else if ((i + 1) % fizzNum === 0 && (i + 1) % buzzNum === 0) {
-                result.innerHTML = `FizzBuzz ${i + 1}`;
+            } else if (i % fizzNum === 0 && i % buzzNum === 0) {
+                result.innerHTML = `FizzBuzz ${i}`;
                 outputArea.appendChild(result);
             };
         };
