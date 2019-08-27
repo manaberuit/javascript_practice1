@@ -12,12 +12,12 @@
   //実行キーを押す
   btn.addEventListener('click', () => {
 
-  //一度取得したクラスの削除
-    let removeChilds = document.getElementsByClassName('pItem');
-    while (removeChilds.length) {
-      removeChilds.item(0).remove();
-    }
-
+  // 一度取得したクラスの削除
+    // let removeChilds = document.getElementsByClassName('pItem');
+    // while (removeChilds.length) {
+    //   removeChilds.item(0).remove();
+    // }
+    elem.textContent = '';
 
     // 取得したinput要素の入力値を取得。
     let fizzInputValue = parseFloat(fizzInput.value);
