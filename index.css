@@ -1,0 +1,35 @@
+body{
+  margin: 50px;
+
+}
+
+#fizzbuzz{
+  font-size:40px;
+  margin-top: 0px;
+  font-weight: bold;
+}
+
+.form{
+  display: flex;
+  margin-bottom: -15px;
+}
+
+
+
+#Buzz{
+  margin-top: -30px;
+}
+
+#fizz{
+  margin-left: 9px;
+}
+#buzz{
+  margin-left: 1px;
+}
+
+
+.form-input{
+  height:15px;
+  width:135px;
+  margin: auto 10px;
+}
