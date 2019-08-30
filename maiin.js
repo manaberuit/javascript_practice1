@@ -22,36 +22,51 @@
     const fizz = document.getElementById(`fizz`);
     const buzz = document.getElementById(`buzz`);
 
-      btn.onclick = function(){
+      // btn.onclick = function(){
+        btn.addEventListener(`click`,() =>{
 
-        text.innerHTML = ("");
 
-        let X = fizz.value;
-        let Y = buzz.value;
+
+        text.innerHTML = "";
+
+        let fizzNum = fizz.value;
+        let buzzNum = buzz.value;
         // var sum = fizz.value * buzz.value;
         // text.textContent = sum;
 
 
 
         // return;
-        for (let i = 1 ;i < 100; i++){
+        for (const num = 1 ;num < 100; num++){
 
-          if (i % X === 0 && i % Y === 0){
-            text.innerHTML += (`FizzBuzz${i}<br>`);
-
-          }else if (i % X === 0) {
-            text.innerHTML += (`Fizz ${i}<br>`);
-          }else if (i % Y === 0) {
-            text.innerHTML += (`Buzz ${i}<br>`);
-          }else if (isNaN(X) || isNaN(Y)){
-            text.innerHTML = ("整数値を入力してください");
-            return;
-          }else if (X === "" || Y === ""){
-            text.innerHTML = ("整数値を入力してください");
+          if (!Math.floor(fizzNum) || !Math.floor(buzzNum)){
+            // text.innerHTML = ("整数値を入力してください");
             return;
           }
+
+          if (fizzNum === "" || buzzNum === ""){
+            // text.innerHTML = ("整数値を入力してください");
+            return;
+          }
+
+          if (num % fizzNum === 0 && num % buzzNum === 0){
+            text.innerHTML += (`FizzBuzz${num}<br>`);
+          }else if (num % fizzNum === 0) {
+            text.innerHTML += (`Fizz ${num}<br>`);
+          }else if (num % buzzNum === 0) {
+            text.innerHTML += (`Buzz ${num}<br>`);
+          }
+
+
+          // if (Math.floor(fizzNum) || Math.floor(buzzNum)){
+          //   text.innerHTML = ("整数値を入力してください");
+          //   return;
+          // }else if (fizzNum === "" || buzzNum === ""){
+          //   text.innerHTML = ("整数値を入力してください");
+          //   return;
+          // }
         }
+      })
 
 
-      }
   }
