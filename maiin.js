@@ -24,6 +24,7 @@
 
           if (!Math.floor(fizzNum) || !Math.floor(buzzNum)){
             text.innerHTML = ("整数値を入力してください");
+            return;
           }
 
 
