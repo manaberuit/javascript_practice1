@@ -8,24 +8,3 @@ body{
   margin-top: 0px;
   font-weight: bold;
 }
-
-.fizzbuzz{
-  display: flex;
-  margin-bottom: -15px;
-}
-
-
-
-#fizz{
-  margin:-36px 0px 0px 82px;
-}
-#buzz{
-  margin:-36px 0px 0px 82px;
-}
-
-
-.form input{
-  height:15px;
-  width:135px;
-  margin: auto 10px;
-}

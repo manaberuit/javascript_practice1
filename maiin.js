@@ -15,6 +15,7 @@
 
         text.innerHTML = "";
 
+          //parseFloatを入れることで、取得と検証をする。
         const fizzNum = parseFloat(fizz.value);
         const buzzNum = parseFloat(buzz.value);
 
