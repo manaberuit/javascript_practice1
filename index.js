@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		console.log(fizznum);
 		console.log(buzznum);
 		// 設定開始
-		if (fizznum.search(/[^0-9]+/) && fizznum != 0) {
+		if (fizznum.search(/[^0-9]+/) && Number(fizznum) !== 0) {
 			halfNumFlag = true;
-		} else if (buzznum.search(/[^0-9]+/) && buzznum != 0) {
+		} else if (buzznum.search(/[^0-9]+/) && Number(buzznum) !== 0) {
 			halfNumFlag = true;
 		}
 		console.log(halfNumFlag); //プルリクエストの時は本当は消す！
@@ -29,13 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
 					return 'Buzz ' + num;
 				}
 			}
-			/*for (let i = 1; i < 100; i++) {
+			for (let i = 1; i < 100; i++) {
 				if (i % fizznum !== 0 && i % buzznum !== 0) {
 					continue;
 				}
 				console.log(fizzbuzz(i));
 				document.getElementById('output').innerHTML += fizzbuzz(i) + '<br>';
-			}*/
+			}
 		}
 	});
 });
