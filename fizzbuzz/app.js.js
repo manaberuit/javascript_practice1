@@ -4,7 +4,8 @@
 //Parameter driven
 function FizzBuzz(value1, value2){
     let returnValue = '';
-    if(isNaN(value1) ==false && isNaN(value2) ==false){
+    let condition = /^[0-9]+$/;
+    if(condition.test(value1) && condition.test(value2)){
         for(i = 1;i <= 100;i++){
             if(i%value1 == 0 && i%value2 == 0){
                 returnValue += `FizzBuzz ${i}<br>`;
