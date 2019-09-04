@@ -19,22 +19,17 @@ document.addEventListener("DOMContentLoaded", function () {
 		if (!halfNumFlag) { //fizzとbuzzの値が半角数字以外ならば「整数値を入力してください」を出力
 			document.getElementById('output').innerHTML = '整数値を入力してください';
 			return false; // 送信を中止
-		} else { //for文でiをインクリメント
-			let fizzbuzz = function (num) {
-				if (num % fizznum === 0 && num % buzznum === 0) {
-					return 'FizzBuzz ' + num;
-				} else if (num % fizznum === 0) {
-					return 'Fizz ' + num;
-				} else if (num % buzznum === 0) {
-					return 'Buzz ' + num;
-				}
-			}
-			for (let i = 1; i < 100; i++) {
-				if (i % fizznum !== 0 && i % buzznum !== 0) {
+		} else { //fizzとbuzzの値が半角数字ならばfor文でiをインクリメント
+			for (let num = 1; num < 100; num++) {
+				if (num % fizznum !== 0 && num % buzznum !== 0) {
 					continue;
+				} else if (num % fizznum === 0 && num % buzznum === 0) {
+					document.getElementById('output').innerHTML += 'FizzBuzz:' + num + '<br>';
+				} else if (num % fizznum === 0) {
+					document.getElementById('output').innerHTML += 'Fizz:' + num + '<br>';
+				} else if (num % buzznum === 0) {
+					document.getElementById('output').innerHTML += 'Buzz:' + num + '<br>';
 				}
-				console.log(fizzbuzz(i));
-				document.getElementById('output').innerHTML += fizzbuzz(i) + '<br>';
 			}
 		}
 	});
