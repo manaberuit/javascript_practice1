@@ -5,17 +5,39 @@
 	<meta charset="utf-8">
 	<title>FizzBuzz問題</title>
 	<script type="text/javascript" src="index.js"></script>
+	<style>
+		label,
+		input {
+			display: block;
+		}
+
+		label {
+			width: 80px;
+		}
+
+		.fizz,
+		.buzz {
+			display: flex;
+			margin: 0.5em 0;
+		}
+
+	</style>
 </head>
 
 <body>
 	<h1>FizzBuzz問題</h1>
-	<label>FizzNum :</label>
-	<input type="text" name="fizz" id="fizz" placeholder="整数値を入力してください">
-	<label>BuzzNum :</label>
-	<input type="text" name="buzz" id="buzz" placeholder="整数値を入力してください">
+	<div class="fizz">
+		<label>FizzNum:</label>
+		<input type="text" name="fizz" id="fizz" placeholder="整数値を入力してください">
+	</div>
+	<div class="buzz">
+		<label>BuzzNum:</label>
+		<input type="text" name="buzz" id="buzz" placeholder="整数値を入力してください">
+	</div>
 	<input type="button" id="submit" value="実行">
 	<p>【出力】</p>
 	<p id="output"></p>
+
 </body>
 
 </html>
