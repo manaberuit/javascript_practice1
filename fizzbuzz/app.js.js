@@ -6,12 +6,12 @@ function FizzBuzz(value1, value2){
     let returnValue = '';
     let condition = /^[0-9]+$/;
     if(condition.test(value1) && condition.test(value2)){
-        for(i = 1;i <= 100;i++){
-            if(i%value1 == 0 && i%value2 == 0){
+        for(i = 1; i <= 100; i++){
+            if(i % value1 === 0 && i % value2 === 0){
                 returnValue += `FizzBuzz ${i}<br>`;
-            } else if(i%value1 ==0){
+            } else if(i % value1 === 0){
                 returnValue +=`Fizz ${i}<br>`;
-            } else if(i%value2 ==0){
+            } else if(i % value2 === 0){
                 returnValue +=`Buzz ${i}<br>`;
             } 
         }
@@ -21,6 +21,7 @@ function FizzBuzz(value1, value2){
     return returnValue;
 }
 
+document.getElementById('exe').addEventListener('click', buzzIt);
 function buzzIt(){
     let output = '';
     let val1 = document.getElementById('fizzValue').value;
