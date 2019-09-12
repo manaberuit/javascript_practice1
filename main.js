@@ -9,18 +9,21 @@ document.addEventListener(
       function() {
         let fizz = Number(document.getElementById("fizz").value);
         let buzz = Number(document.getElementById("buzz").value);
+        let result;
+
+        result = "<a>【出力】</a><br>";
 
         for (let i = 1; i <= 100; i++) {
           if (i % fizz === 0 && i % buzz === 0) {
-            console.log(i + "fizzbuzz");
+            result += "<a>" + "FizzBuzz" + " " + i.toString() + "</a><br>";
           } else if (i % fizz === 0) {
-            console.log(i + "fizz");
+            result += "<a>" + "Fizz" + " " + i.toString() + "</a><br>";
           } else if (i % buzz === 0) {
-            console.log(i + "buzz");
+            result += "<a>" + "Buzz" + " " + i.toString() + "</a><br>";
           } else {
-            console.log(i + "else");
           }
         }
+        document.getElementById("result").innerHTML = result;
       },
       false
     );
