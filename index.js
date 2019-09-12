@@ -21,9 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			return false; // 送信を中止
 		} else { //fizzとbuzzの値が半角数字ならばfor文でiをインクリメント
 			for (let num = 1; num < 100; num++) {
-				if (num % fizznum !== 0 && num % buzznum !== 0) {
-					continue;
-				} else if (num % fizznum === 0 && num % buzznum === 0) {
+				if (num % fizznum === 0 && num % buzznum === 0) {
 					document.getElementById('output').innerHTML += 'FizzBuzz:' + num + '<br>';
 				} else if (num % fizznum === 0) {
 					document.getElementById('output').innerHTML += 'Fizz:' + num + '<br>';
