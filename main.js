@@ -1,45 +1,44 @@
-"use strict";
+'use strict';
 // ページロード時イベントリスナーを登録
-document.addEventListener(
-  "DOMContentLoaded",
-  function() {
-    // ボタン(btn)クリック時に実行されるイベントリスナーを登録
-    document.getElementById("btn").addEventListener(
-      "click",
-      function() {
-        let fizzNum = Number(document.getElementById("fizz").value);
-        let buzzNum = Number(document.getElementById("buzz").value);
-        let result;
-        // 0以上の整数のみの正規表現
-        var pattern = /^([1-9]\d*|0)$/;
+document.addEventListener('DOMContentLoaded', function () {
+  // ボタン(btn)クリック時に実行されるイベントリスナーを登録
+  document.getElementById('btn').addEventListener('click', function () {
+    const fizzNum = Number(document.getElementById('fizz').value);
+    const buzzNum = Number(document.getElementById('buzz').value);
+    let result = '';
+    // 0以上の整数のみの正規表現
+    var pattern = /^([1-9]\d*|0)$/;
 
-        if (!pattern.test(fizzNum)) {
-          // fizzNum入力値バリデーション
-          // 0以上の整数のみ許容する
-          result = "<a>【出力】</a><br>";
-          result += "<a>整数値を入力してください</a>";
-        } else if (!pattern.test(buzzNum)) {
-          // buzzNum入力値バリデーション
-          // 0以上の整数のみ許容する
-          result = "<a>【出力】</a><br>";
-          result += "<a>整数値を入力してください</a>";
-        } else {
-          //FizzBuzz問題の出力結果を作成
-          result = "<a>【出力】</a><br>";
-          for (let i = 1; i <= 100; i++) {
-            if (i % fizzNum === 0 && i % buzzNum === 0) {
-              result += "<a>" + "FizzBuzz" + " " + i.toString() + "</a><br>";
-            } else if (i % fizzNum === 0) {
-              result += "<a>" + "Fizz" + " " + i.toString() + "</a><br>";
-            } else if (i % buzzNum === 0) {
-              result += "<a>" + "Buzz" + " " + i.toString() + "</a><br>";
-            }
-          }
-        }
-        document.getElementById("result").innerHTML = result;
-      },
-      false
-    );
-  },
-  false
-);
+    // fizzNum入力値バリデーション
+    // 0以上の整数のみ許容する
+    if (!pattern.test(fizzNum)) {
+      result = '【出力】<br>';
+      result += '整数値を入力してください';
+      document.getElementById('result').innerHTML = result;
+      return;
+    }
+
+    // buzzNum入力値バリデーション
+    // 0以上の整数のみ許容する
+    if (!pattern.test(buzzNum)) {
+      result = '【出力】<br>';
+      result += '整数値を入力してください';
+      document.getElementById('result').innerHTML = result;
+      return;
+    }
+
+    //FizzBuzz問題の出力結果を作成
+    result = '【出力】<br>';
+    for (let i = 1; i <= 100; i++) {
+      if (i % fizzNum === 0 && i % buzzNum === 0) {
+        result += 'FizzBuzz' + ' ' + i.toString() + '<br>';
+      } else if (i % fizzNum === 0) {
+        result += 'Fizz' + ' ' + i.toString() + '<br>';
+      } else if (i % buzzNum === 0) {
+        result += 'Buzz' + ' ' + i.toString() + '<br>';
+      }
+    }
+    document.getElementById('result').innerHTML = result;
+
+  }, false);
+}, false);
