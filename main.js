@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const buzzNum = Number(document.getElementById('buzz').value);
     let result = '';
     // 0以上の整数のみの正規表現
-    var pattern = /^([1-9]\d*|0)$/;
+    let pattern = /^([1-9]\d*|0)$/;
 
     // fizzNum入力値バリデーション
     // 0以上の整数のみ許容する
@@ -39,6 +39,5 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
     document.getElementById('result').innerHTML = result;
-
-  }, false);
-}, false);
+  });
+});
