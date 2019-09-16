@@ -3,48 +3,51 @@
     <head>
         <meta charset="UTF-8">
         <title>FizzBuzz問題</title>
-        </head>
+    </head>
     <body>
         <h1>FizzBuzz問題</h1>
         <form>
-            <div class="fizzNum">
+            <div>
                 <label for="fizz">FizzNum: </label>
                 <input type="text" id="fizz">
             </div>
-            <div class="buzzNum">
+            <div>
                 <label>BuzzNum:</label>
                 <input type="text" id="buzz">
             </div>
-            <div class="button">
+            <div>
                 <button type="button" id="button">実行</button>    
             </div>
-            <p>出力</p>
+            <p>【出力】</p>
             <div id="text"></div>
         </form>
         
         <script type="text/javascript">
-            document.getElementById("button").onclick = function(){
-                var fizz= document.getElementById("fizz").value;
-                var buzz = document.getElementById("buzz").value;
-                if(isFinite(fizz)==true&&isFinite(buzz)==true){
-                    for(var i=1;i<=100;i++){
-                        if(i%fizz==0 && i%buzz==0){
-                            document.getElementById('text').innerHTML +="FizzBuzz"+ i + '<br>';
+            const btn  = document.getElementById("button");
+            const text = document.getElementById('text');
+            btn.addEventListener(`click`,() =>{
+                const fizz　= document.getElementById("fizz").value;
+                const buzz = document.getElementById("buzz").value;
+                if(isFinite(fizz)　===　true && isFinite(buzz)　===　true){
+                    text.innerHTML = "";
+                    for(var i=1; i<=100; i++){
+                        if(i % fizz === 0 && i % buzz === 0){
+                            text.innerHTML +="FizzBuzz"+ i + '<br>';
                             console.log("FizzBuzz" + i);
                         }
-                        else if(i%fizz==0){
-                            document.getElementById("text").innerHTML += "Fizz" + i + "<br>";
+                        else if(i % fizz === 0){
+                            text.innerHTML += "Fizz" + i + "<br>";
                             console.log("Fizz" + i);
                         }
-                        else if(i%buzz==0){
-                            document.getElementById("text").innerHTML += "Buzz" + i + "<br>";
-                            console.log("Buzz" + i);
+                        else if(i % buzz === 0){
+                            text.innerHTML += "Buzz" + i + "<br>";
+                            console.log("Fizz" + i);
                         }
                     }
                 }else{
-                    document.getElementById("text").innerHTML +="整数値を入力してください";
+                    text.innerHTML ="整数値を入力してください";
                 }
-            };
+            });
         </script>
     </body>
 </html>
