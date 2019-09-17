@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript kadai 1</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <header>
+        <h1>FizzBuzz問題</h1>
+    </header>
+
+    <!-- fizz -->
+    <div class="fizz_box">
+      <p>Fizz:</p>
+      <input id="fizz_num" type="text" value="" placeholder="整数を入力してください" >
+    </div>
+    
+    <!-- buzz -->
+    <div class="buzz_box">
+      <p>Buzz:</p>
+      <input id="buzz_num" type="text" value="" placeholder="整数を入力してください">
+    </div>
+
+    <!-- 送信ボタン -->
+    <input type='submit' value='実行' class='fizz_button'>
+    
+    <!-- 出力場所 -->
+    <div id="test_log">
+      <p class="log">【出力】</p>
+      <p id="test_log_post"></p>
+    </div>
+
+    <script>
+      'use_strict';
+    
+      // ----------
+      //クリック時動作
+      document.querySelector('.fizz_button').addEventListener('click' , () => {
+
+        test_function();
+
+      });
+
+      function test_function() {
+        //テキストBOX内の値を取得
+        const fiz_num = document.querySelector('#fizz_num');
+        const fz_value = fiz_num.value;
+        const bz_num = document.querySelector('#buzz_num');
+        const bz_value = bz_num.value;
+        // ---
+        let array_fz = Array(100);  //データ格納用の配列
+        let stock = '';     //データ表示用の配列
+        let array_bz = Array(100);
+        let stock_bz = '';
+        // ---
+        //初期化
+        array_fz.fill(0);
+        array_bz.fill(0);
+
+        const MAX_ARRAY_INDEX = 100; //作成する配列のサイズ
+        const MAX_DISP_NUM = 100;   //画面表示時のMax値
+
+        let i=0;
+        let a = 0;
+
+        //---入力値が数字かチェック
+        let pattern = /^[0-9]+$/;
+        const check_fz = pattern.test(fz_value);
+        const check_bz = pattern.test(bz_value);
+        console.log('fz_patt '+check_fz);
+        console.log('bz_patt '+check_bz);
+        //---------------------
+        if( check_fz === false || check_bz === false )
+        {
+          const out_array_fz = document.querySelector('#test_log_post');
+          out_array_fz.textContent = '整数値を入力してください';
+        }
+        else
+        {//入力値の倍数を配列で確保
+          for( let i=0; i < MAX_ARRAY_INDEX ; i++)
+          {
+            array_fz[i] =  fz_value * i;
+            array_bz[i] =  bz_value * i;
+            // console.log(array_fz[i]);
+          }
+
+          let index_fz = 0;
+          let index_bz = 0;
+          let debug_ind = 0;
+          //表示用の配列作成
+          while((array_fz[index_fz] < MAX_DISP_NUM) || (array_bz[index_bz] < MAX_DISP_NUM))
+          {
+            if( array_fz[ index_fz ] < array_bz[ index_bz ] )
+            {
+              stock += '<li style="list-style:none">' + 'Fizz ' + array_fz[index_fz] +'</li>';
+              index_fz++;
+            }
+            else if( array_fz[index_fz] > array_bz[index_bz] )
+            {
+              stock += '<li style="list-style:none">' + 'Buzz ' + array_bz[index_bz] +'</li>';
+              index_bz++;
+            }
+            else if( array_fz[index_fz] === array_bz[index_bz] )
+            {
+              if( index_fz !== 0 ){
+                stock += '<li style="list-style:none">' + 'FizzBuzz ' + array_fz[index_fz]; + '</li>';
+              }
+              index_fz++;
+              index_bz++;  
+            }
+
+            // console.log('array_fz' + index_fz + ':' + array_fz[index_fz]);
+            // console.log('array_bz' + index_bz + ':' + array_bz[index_bz]);
+
+            debug_ind++;
+            if(debug_ind > 1000)
+            {
+              break;
+            }
+          }
+
+          //表示内容を更新
+          const out_array_fz = document.querySelector('#test_log_post');
+          out_array_fz.innerHTML = stock;
+
+        }
+      }
+
+    </script>
+  </body>
+  </html>
