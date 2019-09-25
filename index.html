@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript kadai 1</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <header>
+        <h1>FizzBuzz問題</h1>
+    </header>
+
+    <!-- fizz -->
+    <div class="fizz_box">
+      <p>Fizz:</p>
+      <input id="fizz_num" type="text" value="" placeholder="整数を入力してください" >
+    </div>
+    
+    <!-- buzz -->
+    <div class="buzz_box">
+      <p>Buzz:</p>
+      <input id="buzz_num" type="text" value="" placeholder="整数を入力してください">
+    </div>
+
+    <!-- 送信ボタン -->
+    <input type='submit' value='実行' class='fizz_button'>
+    
+    <!-- 出力場所 -->
+    <div id="test_log">
+      <p class="log">【出力】</p>
+      <p id="log_out""></p>
+    </div>
+
+    <!-- javascript読み込み -->
+    <script src="main.js" defer></script>
+
+  </body>
+</html>

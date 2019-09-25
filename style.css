@@ -1,0 +1,15 @@
+/* header h1 {
+  color:red;
+} */
+
+.fizz_box p{
+  margin: 0;
+  display: inline-block;
+}
+
+
+.buzz_box p {
+  margin: 0;
+  display: inline-block;
+}
+
