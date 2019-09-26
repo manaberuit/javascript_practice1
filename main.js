@@ -1,155 +1,93 @@
 'use strict';
 
-
 {
-
 	const fizzNum = document.getElementById("fizzNum");
 	const buzzNum = document.getElementById("buzzNum");
-
 	const execute = document.getElementById("execute");
 	const output = document.getElementById("output");
-	const fizzFrame = document.getElementById("fizzFrame");
-	
-
-	let fizzMultiple;
-	let buzzMultiple;
-
-	
-
 
 	function ringCreate(e){
 
-		
-		let x;
-		let y;
+		let clickPositionX;
+		let clickPositionY;
 		let ring;
-		let radius=25;
+		let radius=25;	
 
-		
-		x = e.clientX;
-		y = e.clientY;
+		clickPositionX = e.clientX;
+		clickPositionY = e.clientY;
 
-		
+		ring = document.createElement("div");		
 
-		ring = document.createElement("div");
+    	ring.style.top = -radius + clickPositionY + "px";
+    	ring.style.left = -radius + clickPositionX + "px";
 
-		
-    	ring.style.top = -radius + y + "px";
-    	ring.style.left = -radius + x + "px";
-
-
-    	
     	ring.className = "ring";
-
     	
     	document.body.appendChild(ring);
 
     	ring.addEventListener("animationend", function() {
     		
 	        this.parentNode.removeChild(this);
+
 	    });
-
-
 
 	}
 
-
-
-	fizzNum.addEventListener("click", function(e){
-
-		
+	fizzNum.addEventListener("click", function(e){		
 
 		ringCreate(e);
 
-
 	});
 
-	buzzNum.addEventListener("click", function(e){
-
-		
+	buzzNum.addEventListener("click", function(e){		
 
 		ringCreate(e);
 
-
 	});
-
-	
-
-
 
 	execute.addEventListener("click", function fizzBuzz(e){
 
 		ringCreate(e);
 
-		if( Number.isInteger( Number(fizzNum.value) ) === false || Number.isInteger( Number(buzzNum.value) ) === false ){
+		if( !Number.isInteger( Number(fizzNum.value) ) || !Number.isInteger( Number(buzzNum.value) ) ){
 
 			output.textContent = "整数値を入力してください。";
 
 			return;
+
 		}
 
 		output.innerHTML ="";
-		
-
-		fizzMultiple = Number(fizzNum.value);
-		buzzMultiple = Number(buzzNum.value);
-
-		
-
-		
 		let result="";
-		let count=30;
 
+		for(let count=1; count < 100; count++){
 
+			if( Number(fizzNum.value)===0 || Number(buzzNum.value)===0){
 
-		for(let i=1; i<count; i++){
+				result="0以外の正の整数を入力してください";
 
-			fizzMultiple = Number(fizzNum.value) * i;
-			buzzMultiple = Number(buzzNum.value) * i;
-
-			//console.log("fizzMultiple:" + fizzMultiple);
-
-			if( (fizzMultiple % Number(fizzNum.value) === 0) && (fizzMultiple % Number(buzzNum.value) === 0) ){
-
-				result = result + "FizzBuzz"+ fizzMultiple + "<br>";
-
-			} else {
-
-				result = result + "Fizz"+ fizzMultiple + "<br>";
-
+				break;
 
 			}
 
+			if( count % Number(fizzNum.value)===0 && count % Number(buzzNum.value)===0 ){
 
-			if( (buzzMultiple % Number(fizzNum.value) === 0) && (buzzMultiple % Number(buzzNum.value) === 0) ){
+				result = result + "fizzbuzz"+ count + "<br>";				
 
-				result = result + "FizzBuzz"+ buzzMultiple + "<br>";
+			} else if( count % Number(fizzNum.value)===0 ){
 
-			} else {
+				result = result + "fizz"+ count + "<br>";
 
-				result = result + "Buzz"+ buzzMultiple + "<br>";
-
+			} else if( count % Number(buzzNum.value)===0 ){
+				
+				result = result + "buzz"+ count + "<br>";
 
 			}
 
-
-
-		}
-		
+		}		
 
 		output.innerHTML = result;
 
-
-		
-
-
 	});
-
-
-
-
-
-
-
 
 }
