@@ -1,10 +1,10 @@
 'use strict'
 {   
     // 実行ボタンの要素を取得
-    const button = document.querySelector("button");
+    const execbutton = document.querySelector("button");
     
     // ☆実行ボタンをクリックした時の処理
-    button.addEventListener("click", e  => {
+    execbutton.addEventListener("click", e  => {
         e.preventDefault();
         
         // 入力フォームの値を取得
@@ -15,47 +15,51 @@
         console.log(buzz);
 
         // 入力された値が整数値であるか判定
-        let flag = 0;
+        let integerflag = false;
         
-        if(document.form1.number1.value.match(/[^0-9]+/)){
-            flag = 1;
+        if(document.form.numberfiz.value.match(/[^0-9]+/)){
+            integerflag = true;
         }
         
-        else if(document.form1.number2.value.match(/[^0-9]+/)){
-            flag = 1;
+        else if(document.form.numberbuzz.value.match(/[^0-9]+/)){
+            integerflag = true;
         }
         
-        if(flag){
+        if(integerflag){
             
             // 整数以外が入力された場合の処理
-            const p1 = document.createElement('p');
-            p1.textContent = "整数値を入力して下さい";
-            document.body.appendChild(p1);
+            const error = document.createElement('p');
+            error.textContent = "整数値を入力して下さい";
+            document.body.appendChild(error);
+            
         }
         
         else{
             
             // 整数が入力された場合の処理
             for (let i = 1; i <= 100; i++)    {
-            
+                
+                // p要素を作成、表示
+                const createp = document.createElement('p');
+                
+                function output() {
+                    document.body.appendChild(createp);
+                };
+                
                 if (i % fiz === 0 && i % buzz === 0) {
-                    
-                const p2 = document.createElement('p');
-                p2.textContent = `FizzBuzz ${i}`;
-                document.body.appendChild(p2);
+                    createp.textContent = `FizzBuzz ${i}`;
+                    output();
+          
                 
                 } else if (i % fiz === 0) {
-                    
-                const p3 = document.createElement('p');
-                p3.textContent = `Fizz ${i}`;
-                document.body.appendChild(p3);
+                    createp.textContent = `Fizz ${i}`;
+                    output();
+
                                 
                 } else if (i % buzz === 0) {
-                    
-                const p4 = document.createElement('p');
-                p4.textContent = `Buzz ${i}`;
-                document.body.appendChild(p4);
-                                
+                    createp.textContent = `Buzz ${i}`;
+                    output();
+
                 }
             
 
