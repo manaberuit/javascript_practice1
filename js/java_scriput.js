@@ -3,23 +3,23 @@
 {
     document.getElementById("btn").addEventListener("click", function(){
         // HTMLから入力された値を取得する
-        const FIZZ = Number(document.getElementById("fizz").value);
-        const BUZZ = Number(document.getElementById("buzz").value);
+        const fizz = Number(document.getElementById("fizz").value);
+        const buzz = Number(document.getElementById("buzz").value);
         // バリデーション用変定数。0以上の整数のみ通す。
-        const NUMERICAL_CHECK = /^([1-9]\d*|0)$/;
+        const numerical_check = /^([1-9]\d*|0)$/;
         // メッセージ用変数。
         let Output_Result = "";
 
          // バリデーション用変数の頭に！をつけて条件がそろえばfalseを返しFizzBuzzの処理を開始する。
-        if (!NUMERICAL_CHECK.test(FIZZ) || !NUMERICAL_CHECK.test(BUZZ)){
+        if (!numerical_check.test(fizz) || !numerical_check.test(buzz)){
             Output_Result = "<p>整数値を入力してください</p>";
         } else {
             for (let i = 1; i < 100; i++){
-                if (i % FIZZ === 0 && i % BUZZ === 0) {
+                if (i % fizz === 0 && i % buzz === 0) {
                     Output_Result += "FizzBuzz " + i.toString() + "<br>";
-                } else if (i % FIZZ === 0) {
+                } else if (i % fizz === 0) {
                     Output_Result += "Fizz " + i.toString() + "<br>";
-                } else if (i % BUZZ === 0 ){
+                } else if (i % buzz === 0 ){
                     Output_Result += "Buzz " + i.toString() + "<br>";
                 }
             };
