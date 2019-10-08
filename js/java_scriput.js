@@ -6,12 +6,12 @@
         const fizz = Number(document.getElementById("fizz").value);
         const buzz = Number(document.getElementById("buzz").value);
         // バリデーション用変定数。0以上の整数のみ通す。
-        const numerical_check = /^([1-9]\d*|0)$/;
+        const Numerical_Check = /^([1-9]\d*|0)$/;
         // メッセージ用変数。
         let Output_Result = "";
 
          // バリデーション用変数の頭に！をつけて条件がそろえばfalseを返しFizzBuzzの処理を開始する。
-        if (!numerical_check.test(fizz) || !numerical_check.test(buzz)){
+        if (!Numerical_Check.test(fizz) || !Numerical_Check.test(buzz)){
             Output_Result = "<p>整数値を入力してください</p>";
         } else {
             for (let i = 1; i < 100; i++){
