@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>FIzzBuzz問題応用</title>
   <style>
-    form label#Fizz  {
+    form label#Fizz_label  {
       margin-right: 7px;
     }
   </style>
@@ -14,19 +14,30 @@
 <body>
   <h1>FizzBuzz問題</h1>
   <form action="#" id="form">
-    <label id="Fizz">FizzNum: </label><input type="text" placeholder="整数値を入力してください" id="FizzNum" name="Fizz"><br>
-    <label id="Buzz">BuzzNum: </label><input type="text" placeholder="整数値を入力してください" id="BuzzNum" name="Buzz"><br>
+    <label id="Fizz_label">FizzNum: </label><input type="text" placeholder="整数値を入力してください" id="FizzNum" name="fizz_number"><br>
+    <label id="Buzz_label">BuzzNum: </label><input type="text" placeholder="整数値を入力してください" id="BuzzNum" name="buzz_number"><br>
     <input type="button" value="実行" id="output_btn">
     <p>【出力】</p>
   </form>
-  <p id="output">整数値を入力してください</p>
+  <p id="output"></p>
 
 <script>
 'use strict';
 
 document.getElementById('output_btn').onclick= function() {
-  const calc = document.getElementById('form').Fi.value;
-  console.log(calc);
+  // console.log(fizznum);
+    // FizzNum情報の取得
+  const fizznum = document.getElementById('form').fizz_number.value;
+  // BuzzNum情報の取得
+  const buzznum = document.getElementById('form').buzz_number.value;
+    // outputへの出力
+  // document.getElementById('output').textContent = fizznum;
+  // document.getElementById('output').textContent = buzznum;
+  console.log(fizznum);
+  // if(fizznum === 1) {
+  //   console.log('整数値を入力してください');
+  // };
+  
 };
 
 
