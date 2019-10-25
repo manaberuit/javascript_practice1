@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FIzzBuzz問題応用</title>
+  <style>
+    form label#Fizz  {
+      margin-right: 7px;
+    }
+  </style>
+</head>
+<body>
+  <h1>FizzBuzz問題</h1>
+  <form action="#" id="form">
+    <label id="Fizz">FizzNum: </label><input type="text" placeholder="整数値を入力してください" id="FizzNum" name="Fizz"><br>
+    <label id="Buzz">BuzzNum: </label><input type="text" placeholder="整数値を入力してください" id="BuzzNum" name="Buzz"><br>
+    <input type="button" value="実行" id="output_btn">
+    <p>【出力】</p>
+  </form>
+  <p id="output">整数値を入力してください</p>
+
+<script>
+'use strict';
+
+document.getElementById('output_btn').onclick= function() {
+  const calc = document.getElementById('form').Fi.value;
+  console.log(calc);
+};
+
+
+</script>
+</body>
+</html>
