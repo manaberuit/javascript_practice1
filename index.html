@@ -27,17 +27,20 @@
 document.getElementById('output_btn').onclick= function() {
   // console.log(fizznum);
     // FizzNum情報の取得
-  const fizznum = document.getElementById('form').fizz_number.value;
-  // BuzzNum情報の取得
-  const buzznum = document.getElementById('form').buzz_number.value;
+  let fizznum = document.getElementById('form').fizz_number.value;
+    // BuzzNum情報の取得
+  let buzznum = document.getElementById('form').buzz_number.value;
     // outputへの出力
   // document.getElementById('output').textContent = fizznum;
   // document.getElementById('output').textContent = buzznum;
-  console.log(fizznum);
+  // console.log(fizznum);
   // if(fizznum === 1) {
   //   console.log('整数値を入力してください');
   // };
-  
+  while(fizznum < 100) {
+    console.log(fizznum);
+    fizznum += fizznum;
+  }
 };
 
 
