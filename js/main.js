@@ -14,11 +14,11 @@
   function fizzBuzz(fizz, buzz) {
     for (let i = 1; i <= 100; i++) {
       const result = document.createElement('p');
-      if (i % fizz == 0 && i % buzz == 0) {
+      if (i % fizz === 0 && i % buzz === 0) {
         result.textContent = 'FizzBuzz ' + i;
-      } else if (i % fizz == 0) {
+      } else if (i % fizz === 0) {
         result.textContent = 'Fizz ' + i;
-      } else if (i % buzz == 0) {
+      } else if (i % buzz === 0) {
         result.textContent = 'Buzz ' + i;
       } else {
         result.textContent = '';
