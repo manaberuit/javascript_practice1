@@ -1,27 +1,21 @@
-let button = document.getElementById('exe');
+const button = document.getElementById('exe');
 button.addEventListener('click', function() {
     let div = document.getElementById('result');
     while(div.lastChild){
         div.removeChild(div.lastChild);
     }
 
-    let fizzNum= parseInt(document.getElementById('fizz').value);
-    let buzzNum = parseInt(document.getElementById('buzz').value);
+    let fizzNum= parseFloat(document.getElementById('fizz').value);
+    let buzzNum = parseFloat(document.getElementById('buzz').value);
 
-    if (Number.isInteger(fizzNum) === false || Number.isInteger(buzzNum) === false) {
+    if (!Number.isInteger(fizzNum) || !Number.isInteger(buzzNum)) {
         let warn = document.createElement('p');
         warn.innerText = '整数値を入力して下さい';
         document.getElementById('result').appendChild(warn);
         return;
     }
     
-    let resultNum = 0;
-    if (fizzNum <= buzzNum) {
-        resultNum = fizzNum;
-    } else {
-        resultNum = buzzNum;
-    }
-    while (resultNum < 100) {
+    for (resultNum = 1; resultNum < 100; resultNum++) {
         let p = document.createElement('p');
         if (resultNum % fizzNum === 0 && resultNum % buzzNum === 0) {
             p.innerText = 'FizzBuzz ' + resultNum;
@@ -31,6 +25,5 @@ button.addEventListener('click', function() {
             p.innerText = 'Buzz ' + resultNum;
         }
         div.appendChild(p);
-        resultNum++;
     }
 });
