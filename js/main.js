@@ -4,6 +4,7 @@
 let number1 = document.getElementById('number1');
 let numbar2 = document.getElementById('number2');
 const action = document.getElementById('action');
+const div = document.createElement('div')
 const MAX_NUM = 100;
 
 
@@ -19,20 +20,23 @@ function RemoveAll() {
 
 // クリックイベント
 action.addEventListener('click',()=>{
-  let VAE_NUM = parseFloat(number1.value) && parseFloat(number2.value);
+  let ValuneText = parseFloat(number1.value) && parseFloat(number2.value);
 
 //resultの子要素の削除
   RemoveAll();
 
-// number1.value,number2.valueでテキスト内の値を取得。
-  if(Number.isInteger(VAE_NUM)　===　true){
+// 数値かどうか判定
+  if(Number.isInteger(ValuneText)　===　true){
+
+    //繰り返し処理
     for(let i = 1; i < MAX_NUM; i++){
+
+      //fizzbuzz判定
       if(i % number1.value ===0 & i %number2.value === 0 ){
         const div = document.createElement('div');
         result.appendChild(div);
         div.textContent = 'FizzBuzz '+ i;
         
-
       }else if(i % number1.value === 0){
         const div = document.createElement('div');
         result.appendChild(div);
@@ -44,12 +48,12 @@ action.addEventListener('click',()=>{
         div.textContent = 'Buzz ' + i;
         }
       }
+
+      // 数字以外
   }else{
     const div = document.createElement('div');
     result.appendChild(div);
     div.textContent = '整数値を入力してください';
    }
 
-
   })
-// div.textContent = 10.match(	/^([1-9]\d*|0)$/) ; 
