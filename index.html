@@ -2,29 +2,20 @@
 <html lang = "ja">
 <head>
     <meta charset = "utf-8">
-    <title>KadaiSub</title>
-    <style>
-    </style>
+    <title>FizzBuzz</title>
+    <link rel="stylesheet" href="css/styles.css">
+
 </head>
 <head>
-
+<h1>FizzBuzz問題</h1>
 </head>
 <body>
-
-  <script>
-    'usre strict';
-
-    const num = 100;
- 
-    for(let i = 1; i < num; i++){
-        if(i %3 ===0 & i %5 === 0 ){
-          console.log('FizzBuzz '+ i);
-        }else if(i % 3 === 0){
-          console.log('Fizz '+ i);
-        }else if(i % 5 === 0 ){
-          console.log('Buzz ' + i);
-        }
-      }
-    </script>
+  <p>FizzNum:  <input type='text' id = 'number1' placeholder ='整数値を入力してください'></p>
+  <p>BuzzNum:  <input type='text' id = 'number2' placeholder ='整数値を入力してください'></p>
+  <button id ='action' >実行</button>
+  <p>[出力]</p>
+  <div id = 'result'>
+  </div> 
+ <script src="js/main.js"></script>
 </body>
 </html>
