@@ -1,50 +1,38 @@
 'usre strict';
 
 // 要件定義
-let number1 = document.getElementById('number1');
-let numbar2 = document.getElementById('number2');
+let text1 = document.getElementById('number1');
+let text2 = document.getElementById('number2');
 const action = document.getElementById('action');
 const div = document.createElement('div')
+var result = document.getElementById('result');
 const MAX_NUM = 100;
 
 
-// resultの子要素の削除関数
-function RemoveAll() {
-  var result = document.getElementById('result');
-  if (result.hasChildNodes()){
-    for (var i=result.childNodes.length-1; i>=0; i--) {
-      result.removeChild(result.childNodes[i]);
-    }
-  }
-}
-
 // クリックイベント
 action.addEventListener('click',()=>{
-  let ValuneText = parseFloat(number1.value) && parseFloat(number2.value);
+  const number1 = parseFloat(text1.value);
+  const number2 = parseFloat(text2.value);
 
 //resultの子要素の削除
-  RemoveAll();
+  result.textContent = ""
 
 // 数値かどうか判定
-  if(Number.isInteger(ValuneText)　===　true){
+  if(Number.isInteger(number1) && Number.isInteger(number2)){
 
     //繰り返し処理
     for(let i = 1; i < MAX_NUM; i++){
+      const div = document.createElement('div');
+      result.appendChild(div);
 
       //fizzbuzz判定
-      if(i % number1.value ===0 & i %number2.value === 0 ){
-        const div = document.createElement('div');
-        result.appendChild(div);
+      if(i % number1 ===0 & i %number2 === 0 ){
         div.textContent = 'FizzBuzz '+ i;
         
-      }else if(i % number1.value === 0){
-        const div = document.createElement('div');
-        result.appendChild(div);
+      }else if(i % number1 === 0){
         div.textContent = 'Fizz '+ i;
 
-      }else if(i % number2.value === 0 ){
-        const div = document.createElement('div');
-        result.appendChild(div);
+      }else if(i % number2 === 0 ){
         div.textContent = 'Buzz ' + i;
         }
       }
