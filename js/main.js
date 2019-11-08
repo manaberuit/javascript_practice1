@@ -1,8 +1,8 @@
 'usre strict';
 
 // 要件定義
-let text1 = document.getElementById('number1');
-let text2 = document.getElementById('number2');
+let fizzNum = document.getElementById('number1');
+let buzzNum = document.getElementById('number2');
 const action = document.getElementById('action');
 const div = document.createElement('div')
 var result = document.getElementById('result');
@@ -11,8 +11,8 @@ const MAX_NUM = 100;
 
 // クリックイベント
 action.addEventListener('click',()=>{
-  const number1 = parseFloat(text1.value);
-  const number2 = parseFloat(text2.value);
+  const number1 = parseFloat(fizzNum.value);
+  const number2 = parseFloat(buzzNum.value);
 
 //resultの子要素の削除
   result.textContent = ""
