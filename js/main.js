@@ -17,7 +17,7 @@ function Remove(){
 }
 
 ACTION.addEventListener('click',()=>{
-  let valuneText = parseFloat(num1.value) && parseFloat(num2.value);
+  let valuneText = parseFloat(num1.value,num2.value) ;
 
   
   if(Number.isInteger(valuneText)===true){
