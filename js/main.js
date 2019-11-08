@@ -7,7 +7,7 @@ const DIV = document.getElementById('result');
 
 let MAX_NUM = 100;
 
-function Remove(){
+let Remove = ()=>{
   const result = document.getElementById('result');
   if(result.hasChildNodes()){
     for(var i=result.childNodes.length - 1; i >= 0; i++){
