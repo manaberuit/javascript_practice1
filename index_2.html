@@ -9,20 +9,52 @@
 <body>
   <h1>ToDoリスト</h1>
   <form>
-    <input type="radio"><label for="all">すべて</label>
-    <input type="radio"><label for="working">作業中</label>
-    <input type="radio"><label for="end">完了</label>
+    <label><input type="radio" name="radio">すべて</label>
+    <label><input type="radio" name="radio">作業中</label>
+    <label><input type="radio" name="radio">完了</label>
     <table>
-      <tr><th>ID</th><th>コメント</th><th>状態</th></tr>
-      <tr><td id="id"></td><td id="comment"></td><td id="status"></td></tr>
+      <thead>
+         <tr><th>ID</th><th>コメント</th><th>状態</th><th></th></tr>
+      </thead>
+      <tbody id="output">
+
+      </tbody>
     </table>
     <h2>新規タスクの追加</h2>
-    <input type="text "id=""> <button id="">追加</button>
+    <input type="text "id="text" name="text"> <input type="button" value="追加" id="btn">
   </form>
 
   <script>
   'use strict';
 
+  let i = 0;
+
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      const text = document.getElementById('text');
+      const output = document.getElementById('output');
+      const tr = document.createElement('tr');
+      const td_id = document.createElement('td');
+      const td_comment = document.createElement('td');
+      const td_status = document.createElement('td');
+      const td_delete = document.createElement('td');
+      const btn_working = document.createElement('button');
+      const btn_delete = document.createElement('button')
+      td_id.innerHTML = i;
+      i++;
+      btn_working.innerHTML = '作業中';
+      btn_delete.innerHTML = '削除';
+      td_comment.innerHTML = text.value;
+      output.appendChild(tr);
+      tr.appendChild(td_id);
+      tr.appendChild(td_comment);
+      tr.appendChild(td_status);
+      tr.appendChild(td_delete);
+      td_status.appendChild(btn_working);
+      td_delete.appendChild(btn_delete);
+    }),false;
+  }),false;
 
   </script>
 </body>
