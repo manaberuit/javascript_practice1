@@ -1,6 +1,7 @@
 'usre strict';
 
 // 要件定義
+
 let fizzNum = document.getElementById('number1');
 let buzzNum = document.getElementById('number2');
 const action = document.getElementById('action');
