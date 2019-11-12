@@ -28,10 +28,6 @@ ACTION.addEventListener('click',() => {
         const div = document.createElement('div');
         result.appendChild(div);
         div.textContent = 'Buzz' + i;
-      }else{
-        const div = document.createElement('div');
-        result.appendChild(div);
-        div.textContent = i;
       }
     }
 
