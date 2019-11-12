@@ -5,42 +5,38 @@ const num2 = document.getElementById('num2');
 const ACTION = document.getElementById('action');
 const DIV = document.getElementById('result');
 
-let MAX_NUM = 100;
+const MAX_NUM = 100;
 
-let Remove = ()=>{
-  const result = document.getElementById('result');
-  if(result.hasChildNodes()){
-    for(var i=result.childNodes.length - 1; i >= 0; i++){
-      result.removeChild(result.childNodes[i]);
-    }
-  }
-}
+ACTION.addEventListener('click',() => {
+  let valuneText1 = parseFloat(num1.value)  
+  let valuneText2 = parseFloat(num2.value)      
 
-ACTION.addEventListener('click',()=>{
-  let valuneText = parseFloat(num1.value,num2.value) ;
 
-  
-  if(Number.isInteger(valuneText)===true){
+  if(Number.isInteger(valuneText1) === true && Number.isInteger(valuneText2) === true){
     for (let i = 1; i < MAX_NUM; i++){
-      if(i % num1.value === 0 & i % num2.value === 0){
-        const div = document.createElement('result');
+      if(i % num1.value === 0 && i % num2.value === 0){
+        const div = document.createElement('div');
         result.appendChild(div);
         div.textContent = 'FizzBuzz' + i;
 
       }else if(i % num1.value === 0 ){
-        const div = document.createElement('result');
+        const div = document.createElement('div');
         result.appendChild(div);
-        div.textContent = 'Fizz\n' + i;
+        div.textContent = 'Fizz' + i;
 
-      }else if(i & num2.value === 0 ){
-        const div = document.createElement('result');
+      }else if(i % num2.value === 0 ){
+        const div = document.createElement('div');
         result.appendChild(div);
-        div.textContent = 'Fizz\n' + i;
+        div.textContent = 'Buzz' + i;
+      }else{
+        const div = document.createElement('div');
+        result.appendChild(div);
+        div.textContent = i;
       }
     }
 
   }else{
-    const div = document.createElement('result');
+    const div = document.createElement('div');
     result.appendChild(div);
     div.textContent = '整数値を入力してください';
   }
