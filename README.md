@@ -2,6 +2,11 @@
 ## `console.log()`を用いて、以下が表示されるようにしましょう。
 ![完成画像](https://github.com/manaberuit/javascript_practice1/blob/image/javascript_practice1_sub1.PNG)  
 
+### 以下を使用します
+- console.log()
+- for文、もしくは、while文
+- if文
+
 ## 課題の提出方法
 1. このリポジトリをご自身のgithubアカウントへforkする。
 2. forkしたリポジトリをローカル環境にcloneする。   
