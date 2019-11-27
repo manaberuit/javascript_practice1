@@ -1,0 +1,66 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script src="bower_components/jquery/dist/jquery.min.js">
+</script>
+<script>
+$(function(){
+	$('.js-submit').on('click', function() {
+	var fizznum ='';
+	var buzznum ='';
+	var paragraph = document.getElementById("js-print");
+	console.log(isNaN($('.js-input-fizznum').val()));
+	if ($('.js-input-fizznum').val().replace(/[ 　]/g, '') != '' && !isNaN($('.js-input-fizznum').val())){
+
+		if ($('.js-input-buzznum').val().replace(/[ 　]/g, '') != '' && !isNaN($('.js-input-buzznum').val())){
+			fizznum = $('.js-input-fizznum').val();
+			buzznum = $('.js-input-buzznum').val();
+			sumfizz= [];
+			sumfizznum= '';
+			sumbuzznum= [];
+			sumfizz= [];
+			buzzsumnum= '';
+
+			while (String(buzznum).length < 3 || String(fizznum).length < 3) {
+				if (String(buzznum * 2).length < 3 || String(fizznum * 2).length < 3){
+					if ((buzznum * 2) == (fizznum * 2)){
+						sumfizz += ('<p>' + "FizzBuzz　" + (fizznum * 2) + '</p>');
+					} else {
+						sumfizz += ('<p>' + "FizzNum　" + (fizznum * 2) + '</p>');
+						sumfizz += ('<p>' + "BuzzNum　" + (buzznum * 2) + '</p>');
+					}
+					fizznum = fizznum * 2;
+					buzznum = buzznum * 2;
+				}else{
+					break;
+				}
+			};
+			paragraph.innerHTML = sumfizz;
+
+		} else {
+			paragraph.innerHTML = '数値以外が入力されています。';
+		}
+
+
+	}else{
+			paragraph.innerHTML = '数値以外が入力されています。';
+	}
+
+});
+});
+
+</script>
+<body>
+	<div class="container">
+		<div><span>FizzNum</span><input class="js-input-fizznum" type="text" value=""></div>
+		<div><span>BuzzNum</span> <input class="js-input-buzznum"  type="text" value=""></div>
+		<button class="js-submit">実行</button>
+	</div>
+	<div>
+		<p>【出力】</p>
+		<div id="js-print">整数値を入力してください</div>
+	</div>
+</body>
+</html>
