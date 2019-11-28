@@ -7,16 +7,20 @@
 </script>
 <script>
 $(function(){
-	$('.js-submit').on('click', function() {
+	const button = document.querySelector('button');
+
+	button.addEventListener('click', event => {
 	var fizznum ='';
 	var buzznum ='';
-	var paragraph = document.getElementById("js-print");
-	console.log(isNaN($('.js-input-fizznum').val()));
-	if ($('.js-input-fizznum').val().replace(/[ 　]/g, '') != '' && !isNaN($('.js-input-fizznum').val())){
+	const paragraph = document.getElementById("js-print");
+	const fizznumInput = document.getElementsByClassName("js-input-fizznum");
+	const buzznumInput = document.getElementsByClassName("js-input-buzznum");
+	console.log(fizznumInput);
+	if (fizznumInput[0].value.replace(/[ 　]/g, '') != '' && !isNaN(fizznumInput[0].value)){
 
-		if ($('.js-input-buzznum').val().replace(/[ 　]/g, '') != '' && !isNaN($('.js-input-buzznum').val())){
-			fizznum = $('.js-input-fizznum').val();
-			buzznum = $('.js-input-buzznum').val();
+		if (buzznumInput[0].value.replace(/[ 　]/g, '') != '' && !isNaN(buzznumInput[0].value)){
+			fizznum = fizznumInput[0].value;
+			buzznum = buzznumInput[0].value;
 			sumfizz= [];
 			sumfizznum= '';
 			sumbuzznum= [];
