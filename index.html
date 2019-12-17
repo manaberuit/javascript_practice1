@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FizzBuzz問題</title>
+    <style>
+        dl {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 0;
+        }
+
+        dt {
+            width: 5.5em;
+        }
+
+        dd {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>FizzBuzz問題</h1>
+    <div id="input-section">
+        <dl>
+            <dt>FizzNum:</dt>
+            <dd><input id="fizz-input" type="text" placeholder="整数値を入力ください"></dd>
+        </dl>
+        <dl>
+            <dt>BuzzNum:</dt>
+            <dd><input id="buzz-input" type="text" placeholder="整数値を入力ください"></dd>
+        </dl>
+        <button id="calc-btn">実行</button>
+    </div>
+    <p>【出力】</p>
+    <div id="output-section">
+        整数値を入力してください。
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
