@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>FizBuzzApp</title>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/reset.css">
+
+  <style>
+    .container{
+      width: 500px;
+      margin: 0 auto;
+    }
+    .txt{
+      font-size: 20px;
+      padding: 5px;
+    }
+    .add-txt{
+      width: 500px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 20px;
+      padding: 5px;
+    }
+    input[type="text"]{
+      font-size: 20px;
+    }
+    input[type="text"]::placeholder{
+      font-size: 14px;
+    }
+    input[type="submit"]{
+      width:50px;
+      margin: 20px 0;
+    }
+    .add-txt{
+      width: 500px;
+      margin: 0 auto;
+    }
+  </style>
+
+  
+
+</head>
+<body>
+  <div class="container">
+    <p class="txt">FizzNum:<input type="text" id="fizz" placeholder="整数値を入力してください"></input></p>
+    <p class="txt">BuzzNum:<input type="text" id="buzz" placeholder="整数値を入力してください"></input></p>
+    <input type="submit" value="実行" id="submit"> 
+    <p>【実行結果】</p>
+  </div>
+  <div class="container" id="result">
+    
+  </div>
+  
+  
+  
+
+<script src="js/main.js"></script>
+</body>
+</html>
