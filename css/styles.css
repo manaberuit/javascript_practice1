@@ -1,0 +1,31 @@
+
+body{
+  width:250px;
+  height: auto;
+  margin-left: 100px;
+}
+
+input{
+  float: right;
+}
+
+.fizzNum{
+  padding-bottom: 10px;
+}
+.buzzNum{
+  padding-bottom: 10px;
+}
+
+
+h2{
+  font-size: 20px;
+}
+
+p{
+  font-size: 14px;
+  margin:4px 0;
+}
+
+#calcList {
+  list-style: none;
+}
