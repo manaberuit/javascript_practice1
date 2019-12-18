@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>kadai</title>
+  <style>
+    h1 {
+      padding: 5px 0;
+    }
+
+    #button {
+      margin-top: 10px;
+    }
+
+    h3 {
+      font-weight: normal;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="input">
+    <h1>FizzBuzz問題</h1>
+
+    <div>
+      <label for="fizzInput">FizzNum:</label>
+      <input type="text" id="fizzInput" size="25" value="" placeholder="整数値を入力してください">
+    </div>
+    <div>
+      <label for="buzzInput">BuzzNum:</label>
+      <input type="text" id="buzzInput" size="25" value="" placeholder="整数値を入力してください">
+    </div>
+
+    <button type="button">実行</button>
+
+    <p>【出力】</p>
+  </section>
+  <section id="output">
+    <h3 id="message">結果表示</h3>
+    <p id="elem"></p>
+  </section>
+
+  <script src="kadai.js"></script>
+</body>
+
+</html>
