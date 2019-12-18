@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+#fizzNum, #buzzNum {
+    width: 200px;
+}
+
+#fizzNum {
+    margin-left: 12px;
+}
+
+#buzzNum {
+    margin-left: 4px;
+}
