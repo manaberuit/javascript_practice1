@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FIzzBuzz問題応用</title>
+  <style>
+    form label#Fizz_label  {
+      margin-right: 7px;
+    }
+    li {
+      list-style-type: none;
+    }
+    ul {
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>FizzBuzz問題</h1>
+  <form action="#" id="form">
+    <label id="Fizz_label">FizzNum: </label><input type="text" placeholder="整数値を入力してください" id="FizzNum" name="fizz_number"><br>
+    <label id="Buzz_label">BuzzNum: </label><input type="text" placeholder="整数値を入力してください" id="BuzzNum" name="buzz_number"><br>
+    <input type="button" value="実行" id="output_btn">
+    <p>【出力】</p>
+  </form>
+  <!-- <p id="output"></p> -->
+  <ul id="output">
+
+  </ul>
+
+<script>
+'use strict';
+
+document.getElementById('output_btn').onclick= function() {
+  document.getElementById('output').textContent = '';
+    // FizzNum情報の取得
+  let fizznum = document.getElementById('form').fizz_number.value;
+    // BuzzNum情報の取得
+  let buzznum = document.getElementById('form').buzz_number.value;
+
+  function output() {
+  for(let i = 1; i < 100; i++) {
+    if(i % fizznum === 0 && i % buzznum === 0 ) {
+      const li = `<li>FizzBuzz ${i}</li>`;
+      document.getElementById('output').insertAdjacentHTML('beforeEnd', li); 
+      } else if(i % fizznum === 0) {
+      const li = `<li>Fizz ${i}</li>`;
+      document.getElementById('output').insertAdjacentHTML('beforeEnd', li); 
+      } else if(i % buzznum === 0) {
+      const li = `<li>Buzz ${i}</li>`;
+      document.getElementById('output').insertAdjacentHTML('beforeEnd', li); 
+    } 
+  }
+  }
+    if(isNaN(fizznum) || isNaN(buzznum) || fizznum === '' || buzznum === '') {
+    document.getElementById('output').textContent = '整数値を入力してください';
+    } else {
+    output();
+  }
+};
+
+
+
+</script>
+</body>
+</html>
