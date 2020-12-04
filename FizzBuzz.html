@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>FizzBuzz問題</title>
+        <script type="text/javascript" src="FizzBuzz.js"></script>
+    </head>
+    <body>
+        <h1>FizzBuzz問題</h1>
+        <form>
+            <div class="fizzNum">
+                <label for="fizz">FizzNum: </label>
+                <input type="text" id="fizz">
+            </div>
+            <div class="buzzNum">
+                <label>BuzzNum:</label>
+                <input type="text" id="buzz">
+            </div>
+            <div class="button">
+                <button type="button" id="button">実行</button>    
+            </div>
+            <p>出力</p>
+            <div id="text"></div>
+        </form>
+        
+        <script type="text/javascript">
+            document.getElementById("button").onclick = function(){
+                const fizz= document.getElementById("fizz").value;
+                const buzz = document.getElementById("buzz").value;
+                if(isFinite(fizz) && isFinite(buzz)){
+                    for(var i　=　1; i　<=　100; i++){
+                        if(i % fizz === 0 && i % buzz === 0){
+                            document.getElementById('text').innerHTML +="FizzBuzz"+ i + '<br>';
+                        }
+                        else if(i % fizz === 0){
+                            document.getElementById("text").innerHTML += "Fizz" + i + "<br>";
+                        }
+                        else if(i % buzz === 0){
+                            document.getElementById("text").innerHTML += "Buzz" + i + "<br>";
+                        }
+                    }
+                }else{
+                    document.getElementById("text").innerHTML +="整数値を入力してください";
+                }
+            };
+        </script>
+    </body>
+</html>
