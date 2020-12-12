@@ -1,0 +1,15 @@
+  ul li {
+    list-style: none;
+    text-align: left;
+  }
+
+  label {
+    width: 85px;
+    float: left;
+  }
+
+  ul {
+    padding-left: 0;
+    margin-bottom: 5px;
+  }
+
